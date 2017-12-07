@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>smallasa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="smallasa">
+<meta property="og:url" content="http://www.smallasa.com/index.html">
+<meta property="og:site_name" content="smallasa">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="smallasa">
+  
+    <link rel="alternate" href="/atom.xml" title="smallasa" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">smallasa</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I known what i do !</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.smallasa.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-hello-everyone" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/hello-everyone/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/hello-everyone/">Hello Everyone</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>欢迎来到小站.</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2020/01/01/hello-everyone/" data-id="cjavy9jwx003q0coq49nwvv54" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-kafka-web-console" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/28/kafka-web-console/" class="article-date">
+  <time datetime="2017-11-28T05:47:46.000Z" itemprop="datePublished">2017-11-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hadoop/">hadoop</a>►<a class="article-category-link" href="/categories/hadoop/kafka/">kafka</a>►<a class="article-category-link" href="/categories/hadoop/kafka/kafka-web-console/">kafka web console</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/28/kafka-web-console/">kafka web console</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="kafka-web-console"><a href="#kafka-web-console" class="headerlink" title="kafka web console"></a><a href="https://github.com/claudemamo/kafka-web-console" target="_blank" rel="noopener">kafka web console</a></h3><ol>
+<li><p>Java install</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost app]<span class="comment"># tar xzf jdk-8u111-linux-x64.tar.gz</span></span><br><span class="line">[root@localhost app]<span class="comment"># mv jdk1.8.0_111 /mnt/app/java</span></span><br><span class="line">[root@localhost app]<span class="comment"># echo 'JAVA_HOME=/mnt/app/java' | tee /etc/profile.d/java.sh</span></span><br><span class="line">[root@localhost app]<span class="comment"># echo 'JRE_HOME=$&#123;JAVA_HOME&#125;/jre' | tee -a /etc/profile.d/java.sh</span></span><br><span class="line">[root@localhost app]<span class="comment"># echo 'CLASSPATH=.:$&#123;JAVA_HOME&#125;/lib:$&#123;JRE_HOME&#125;/lib' | tee -a /etc/profile.d/java.sh</span></span><br><span class="line">[root@localhost app]<span class="comment"># echo 'export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH' | tee -a /etc/profile.d/java.sh</span></span><br><span class="line">[root@localhost app]<span class="comment"># source  /etc/profile</span></span><br><span class="line">[root@localhost app]<span class="comment"># java -version</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sbt install</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost app]<span class="comment"># cat &gt;/etc/yum.repos.d/bintray-sbt-rpm.repo&lt;&lt; eof</span></span><br><span class="line"><span class="comment">#bintray--sbt-rpm - packages by  from Bintray</span></span><br><span class="line">[bintray--sbt-rpm]</span><br><span class="line">name=bintray--sbt-rpm</span><br><span class="line">baseurl=https://sbt.bintray.com/rpm</span><br><span class="line">gpgcheck=0</span><br><span class="line">repo_gpgcheck=0</span><br><span class="line">enabled=1</span><br><span class="line">EOF</span><br><span class="line">[root@localhost app]<span class="comment"># yum -y install sbt</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scala install</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost app]<span class="comment"># wget https://downloads.lightbend.com/scala/2.11.6/scala-2.11.6.tgz</span></span><br><span class="line">[root@localhost app]<span class="comment"># tar xzf scala-2.11.6.tgz</span></span><br><span class="line">[root@localhost app]<span class="comment"># mv scala-2.11.6 /mnt/app/scala</span></span><br><span class="line">[root@localhost app]<span class="comment"># cat &gt;/etc/profile.d/scala.sh &lt;&lt;EOF</span></span><br><span class="line"><span class="built_in">export</span> SCALA_HOME=/mnt/app/scala</span><br><span class="line"><span class="built_in">export</span> PATH=\<span class="variable">$PATH</span>:\<span class="variable">$SCALA_HOME</span>/bin</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>kafka-web-console install</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost app]<span class="comment"># wget https://github.com/claudemamo/kafka-web-console/archive/master.zip</span></span><br><span class="line">[root@localhost app]<span class="comment"># unzip master</span></span><br><span class="line">[root@localhost app]<span class="comment"># cd kafka-web-console-master</span></span><br><span class="line">[root@localhost kafka-web-console-master]<span class="comment"># sbt package</span></span><br><span class="line">[root@localhost kafka-web-console-master]<span class="comment"># sbt dist</span></span><br><span class="line">[root@localhost kafka-web-console-master]<span class="comment"># sbt run   //可以直接运行</span></span><br><span class="line"></span><br><span class="line">[root@localhost kafka-web-console-master]<span class="comment"># mkdir -p /mnt/app/kafka-web-console</span></span><br><span class="line">[root@localhost kafka-web-console-master]<span class="comment"># unzip target/universal/kafka-web-console-2.1.0-SNAPSHOT.zip /mnt/app/kafka-web-console</span></span><br><span class="line">[root@localhost kafka-web-console-master]<span class="comment"># cd /mnt/app/kafka-web-console</span></span><br><span class="line">[root@localhost kafka-web-console]<span class="comment"># bin/kafka-web-console -DapplyEvolutions.default=true</span></span><br><span class="line">[root@localhost kafka-web-console]<span class="comment"># bin/kafka-web-console -Dhttp.port=9001 &gt;/dev/null 2&gt;&amp;1 &amp;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过web浏览器进行查看</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/28/kafka-web-console/" data-id="cjavy9jyo004y0coq9f5buxv5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-svn-auto-update" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/27/svn-auto-update/" class="article-date">
+  <time datetime="2017-11-27T02:18:50.000Z" itemprop="datePublished">2017-11-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/svn/">svn</a>►<a class="article-category-link" href="/categories/automation/svn/svn-auto-update/">svn auto update</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/27/svn-auto-update/">svn auto update</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="svn-auto-update"><a href="#svn-auto-update" class="headerlink" title="svn auto update"></a>svn auto update</h3><ol>
+<li>svn自动更新<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">1.找到版本库的克隆位置</span><br><span class="line">  找到hooks目录,在里面新建一个post-commit.bat文件</span><br><span class="line">  内容如下:</span><br><span class="line">  @echo off</span><br><span class="line">  &quot;C:\Program Files (x86)\Subversion\bin\svn.exe&quot; update &quot;C:\Users\admin\Desktop\svntest&quot; --username &quot;username&quot; --password &quot;password&quot;</span><br><span class="line"></span><br><span class="line">2.手动执行一下bat脚本,验证是否OK</span><br><span class="line"></span><br><span class="line">3.编写vbs脚本</span><br><span class="line">  callSvnUpdate.vbs内容如下:(前单引号&quot;&apos;&quot;表示注释)</span><br><span class="line">  &apos;指定时间间隔调用.bat文件</span><br><span class="line">  &apos;停止脚本请在任务管理器结束wscript.exe</span><br><span class="line">  Set ws=wscript.createobject(&quot;wscript.shell&quot;)</span><br><span class="line">  dim bat</span><br><span class="line">  &apos;需运行的文件</span><br><span class="line">  bat=&quot;cmd.exe /c svnUpdate.bat&quot;</span><br><span class="line">  do</span><br><span class="line">  &apos;0表示不显示窗口,1显示,调试用</span><br><span class="line">  ws.run bat,0</span><br><span class="line">  &apos;每15秒运行一次</span><br><span class="line">  wscript.sleep 15000</span><br><span class="line">  loop</span><br><span class="line"></span><br><span class="line">4.将vbs脚本和bat脚本放在同一个目录中,运行vbs脚本</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/27/svn-auto-update/" data-id="cjavy9k7b00ay0coqaeyozi6r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-salt-manage-event-reactor" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/15/salt-manage-event-reactor/" class="article-date">
+  <time datetime="2017-11-15T03:51:37.000Z" itemprop="datePublished">2017-11-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/salt/">salt</a>►<a class="article-category-link" href="/categories/automation/salt/salt-manage-event-reactor/">salt manage event reactor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/15/salt-manage-event-reactor/">salt manage event reactor</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="salt-Event和Reactor系统"><a href="#salt-Event和Reactor系统" class="headerlink" title="salt Event和Reactor系统"></a>salt Event和Reactor系统</h3><ol>
+<li><p>salt Event说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Event是SaltStack里面的对每个事件的一个记录,它相比job更加底层,Event能记录更加详细的SaltStack事件,比如:Minion服务启动后请求Master签发证书或者证书校验的过程,都能通过Event事件来查看整个过程.</span><br><span class="line">Event也为扩展SaltStack提供了更加友好的接口.目前官方已经列出一些Event事件,包括认证,Minion连接Master,key认证,job等</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看event事件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># salt-run state.event pretty=True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>salt Reactor系统</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Reactor是基于Event的每个事件来做相应的操作(states).我们可以理解Reactor系统是一直监听着Event,然后触发一些States操作.例如:在我们日常大规模新机器上线或者初始化机器的时候,都希望Minion第一次服务起来的时候就能完成所有的配置,这个时候需要自动完成Minion的证书签发和根据不同的业务完成不同states配置.恰好Reactor就是干这个事情的.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>master配置文件中添加如下内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># vim /etc/salt/master</span></span><br><span class="line">reactor:</span><br><span class="line">- <span class="string">'salt/auth'</span>:                                 <span class="comment">#监听证书认证event</span></span><br><span class="line">  - /mnt/data/salt.repo/reactor/minion.sls     <span class="comment">#执行states sls文件</span></span><br><span class="line">- <span class="string">'salt/minion/*/start'</span>:                       <span class="comment">#监听Minion start event</span></span><br><span class="line">  - /mnt/data/salt.repo/reactor/auto.sls       <span class="comment">#执行states sls文件</span></span><br><span class="line"></span><br><span class="line">[root@salt-master ~]<span class="comment"># vim /mnt/data/salt.repo/reactor/minion.sls</span></span><br><span class="line">&#123;% <span class="keyword">if</span> <span class="string">'act'</span> <span class="keyword">in</span> data and data[<span class="string">'act'</span>] == <span class="string">'pend'</span> and data[<span class="string">'id'</span>].startswith(<span class="string">'Min'</span>) %&#125;</span><br><span class="line">key_accept:</span><br><span class="line">  wheel.key.accept:</span><br><span class="line">    - match: &#123;&#123; data[<span class="string">'id'</span>] &#125;&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">[root@salt-master ~]<span class="comment"># vim /mnt/data/salt.repo/reactor/auto.sls</span></span><br><span class="line">run_state:</span><br><span class="line">  local.state.sls:</span><br><span class="line">    - tgt: &#123;&#123; data[<span class="string">'id'</span>] &#125;&#125;</span><br><span class="line">    - arg:</span><br><span class="line">      - shencan</span><br><span class="line">fun_init:</span><br><span class="line">  local.cmd.run:</span><br><span class="line">    - tgt: &#123;&#123; data[<span class="string">'id'</span>] &#125;&#125;</span><br><span class="line">    - arg:</span><br><span class="line">      - <span class="built_in">echo</span> initsok |tee /tmp/cpis</span><br><span class="line"></span><br><span class="line">[root@salt-master ~]<span class="comment"># vim /mnt/data/salt.repo/salt/base/shencan.sls</span></span><br><span class="line">/tmp/example:</span><br><span class="line">  file.managed:</span><br><span class="line">    - <span class="built_in">source</span>: salt://example</span><br><span class="line"></span><br><span class="line">5. 重启salt-master服务</span><br><span class="line"></span><br><span class="line">6. 启动一台新的minion客户端,并且minion配置文件的ID中必须以<span class="string">"Min"</span>开头即可.当minion启动时会自动初始化配置了</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/15/salt-manage-event-reactor/" data-id="cjavy9k6b00a00coqchqjiz2v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-salt-manage-job" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/15/salt-manage-job/" class="article-date">
+  <time datetime="2017-11-15T03:36:08.000Z" itemprop="datePublished">2017-11-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/salt/">salt</a>►<a class="article-category-link" href="/categories/automation/salt/salt-manage-job/">salt manage job</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/15/salt-manage-job/">salt manage job</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="salt-job管理"><a href="#salt-job管理" class="headerlink" title="salt job管理"></a>salt job管理</h3><ol>
+<li><p>salt job说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在SaltStack里面执行任何一个操作都会在Master上产生一个jid号.Minion端会在cache目录下的proc目录创建一个以jid为名称的文件,这个文件里面的内容就是此次操作的记录,当操作处理完成后该文件会自动删除.而Master端会记录每次操作的详细信息,这个记录都是存在Master端cache目录下jobs下.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过salt-run来管理job</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//查看salt-run对job管理的一些用法</span><br><span class="line">[root@salt-master ~]<span class="comment"># salt-run -d |grep jobs</span></span><br><span class="line"></span><br><span class="line">//查看job运行结果</span><br><span class="line">[root@salt-master ~]<span class="comment"># salt-run jobs.lookup_jid 2015050322312</span></span><br><span class="line"></span><br><span class="line">//查看job详细记录</span><br><span class="line">[root@salt-master ~]<span class="comment"># salt-run jobs.list_job 2015050322312</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过SaltStack Module来管理job</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">salt-run对job管理功能比较局限,目前salt-run还不支持<span class="built_in">kill</span>某个job.现在我们就开始介绍使用SaltStack自带的Module来管理job</span><br><span class="line"></span><br><span class="line">//查看Module的用法</span><br><span class="line">[root@salt-master ~]<span class="comment"># salt \* sys.doc saltutil |grep job</span></span><br><span class="line"></span><br><span class="line">//查看job信息</span><br><span class="line">[root@salt-master ~]<span class="comment"># salt 'Minion' saltutil.find_job 2015050322312</span></span><br><span class="line"></span><br><span class="line">//杀掉job</span><br><span class="line">[root@salt-master ~]<span class="comment"># salt 'Minion' saltutil.kill_job 2015050322312</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/15/salt-manage-job/" data-id="cjavy9k6f00a30coq5eff5zo3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-salt-manage-return" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/15/salt-manage-return/" class="article-date">
+  <time datetime="2017-11-15T02:48:05.000Z" itemprop="datePublished">2017-11-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/salt/">salt</a>►<a class="article-category-link" href="/categories/automation/salt/salt-manage-return/">salt manage return</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/15/salt-manage-return/">salt manage return</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="salt-执行结果处理"><a href="#salt-执行结果处理" class="headerlink" title="salt 执行结果处理"></a>salt 执行结果处理</h3><ol>
+<li><p>salt return组件说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Return组件可以理解为SaltStack系统对执行Minion返回后的数据进行存储或者返回给其他程序,它支持多种存储方式,比如:MySQL,MongoDB,Redis,Memcache等.通过Return我们可以对SaltStack的每次操作进行记录,对以后日志审计提供了数据来源.在选择和配置好要使用的Return后,只需在salt命令后面指定Return即可.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看所有Return列表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># salt 'salt-minion-187' sys.list_returners</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Return流程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Return是在Master端触发任务,然后Minion接受处理任务后直接与Return存储服务器建立连接,然后把数据Return存到存储服务器.</span><br><span class="line">关于这点大家一定要记住,因为这个过程都是Minion端操作存储服务器,所以要确保Minion端的配置跟依赖包是正确的</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Redis作为Return存储方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1.修改配置文件</span><br><span class="line">  * Minion配置文件</span><br><span class="line">  * 在Minion上安装Redis Python Client</span><br><span class="line"></span><br><span class="line">2.首先需要在Minion配置文件里面定义Return存储服务器信息.</span><br><span class="line">[root@salt-minion-187 ~]<span class="comment"># vim /etc/salt/minion</span></span><br><span class="line">redis.db: <span class="string">'0'</span></span><br><span class="line">redis.host: <span class="string">'192.168.10.1'</span></span><br><span class="line">redis.port: 6379</span><br><span class="line"></span><br><span class="line">3.因为是Minion直接操作Redis服务器,我们得确保Redis Python Client文件已经安装</span><br><span class="line">[root@salt-minion-187 ~]<span class="comment"># pip install redis</span></span><br><span class="line"></span><br><span class="line">4.重启Minion服务</span><br><span class="line">[root@salt-minion-187 ~]<span class="comment"># systemctl salt-minion restart</span></span><br><span class="line"></span><br><span class="line">5.验证</span><br><span class="line">//在redis服务器上打开monitor</span><br><span class="line">[root@redis ~]<span class="comment"># redic-cli -p 6379 monitor</span></span><br><span class="line"></span><br><span class="line">//在salt-master执行一个module</span><br><span class="line">[root@salt-master ~]<span class="comment"># salt 'salt-minion-187' cmd.run "hostname" –-return redis</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/15/salt-manage-return/" data-id="cjavy9k6n00a90coqvizzuzkr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-salt-manage-states" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/15/salt-manage-states/" class="article-date">
+  <time datetime="2017-11-15T02:17:56.000Z" itemprop="datePublished">2017-11-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/salt/">salt</a>►<a class="article-category-link" href="/categories/automation/salt/salt-manage-states/">salt manage states</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/15/salt-manage-states/">salt manage states</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="salt-配置管理"><a href="#salt-配置管理" class="headerlink" title="salt 配置管理"></a>salt 配置管理</h3><ol>
+<li><p>salt states说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">States是SaltStack中的配置语言,在日常进行配置管理时需要编写大量的States文件.</span><br><span class="line">比如:我们需要安装一个包,然后管理一个配置文件,最后保证某个服务正常运行.这里就需要我们编写一些states sls文件(描述状态配置的文件)去描述和实现我们的功能.这里需要说明的是编写的states sls文件都是YAML语法.当然states sls文件也支持使用Python语言来编写.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看minion所有states列表</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># salt 'salt-minion-187' sys.list_state_modules</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看指定states的所有function</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># salt 'salt-minion-187' sys.list_state_functions user</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看指定states用法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># salt 'salt-minion-187' sys.state_doc user.present</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>了解states</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">1.使用states的流程</span><br><span class="line">  * 编写top.sls文件(非必须)</span><br><span class="line">  * 编写states.sls文件</span><br><span class="line"></span><br><span class="line">  top.sls是states系统的入口文件,它在大规模配置管理工作中负责指定哪些设备调用哪些states.sls文件</span><br><span class="line">  如果我们只需简单对某台机器进行配置管理工作,我们可以直接使用state.sls命令指定states.sls文件即可</span><br><span class="line"></span><br><span class="line">2.查看file_roots位置</span><br><span class="line">[root@salt-master ~]# cat /etc/salt/master</span><br><span class="line">file_roots:</span><br><span class="line">  base:</span><br><span class="line">    - /mnt/data/salt.repo/salt/base</span><br><span class="line"></span><br><span class="line">3.新建一个one.sls state文件</span><br><span class="line">[root@salt-master ~]# vim /mnt/data/salt.repo/salt/base/one.sls</span><br><span class="line">/tmp/foo.conf:</span><br><span class="line">  file.managed:</span><br><span class="line">    - source: salt://foo.conf</span><br><span class="line">    - user: root</span><br><span class="line">    - group: root</span><br><span class="line">    - mode: 644</span><br><span class="line">    - backup: minion</span><br><span class="line">[root@salt-master ~]# echo &quot;SaltStack Books&quot; |tee /mnt/data/salt.repo/salt/base/foo.conf</span><br><span class="line"></span><br><span class="line">4.对minion进行配置部署</span><br><span class="line">[root@salt-master ~]# salt &apos;salt-minion-187&apos; state.sls one</span><br><span class="line">salt-minion-187:</span><br><span class="line">----------</span><br><span class="line">          ID: /tmp/foo.conf</span><br><span class="line">    Function: file.managed</span><br><span class="line">      Result: True</span><br><span class="line">     Comment: File /tmp/foo.conf updated</span><br><span class="line">     Started: 10:33:26.113398</span><br><span class="line">    Duration: 36.989 ms</span><br><span class="line">     Changes:   </span><br><span class="line">              ----------</span><br><span class="line">              diff:</span><br><span class="line">                  New file</span><br><span class="line">              mode:</span><br><span class="line">                  0644</span><br><span class="line"></span><br><span class="line">Summary for salt-minion-187</span><br><span class="line">------------</span><br><span class="line">Succeeded: 1 (changed=1)</span><br><span class="line">Failed:    0</span><br><span class="line">------------</span><br><span class="line">Total states run:     1</span><br><span class="line">Total run time:  36.989 ms</span><br><span class="line"></span><br><span class="line">5.在states的工作目录下新建top.sls文件</span><br><span class="line">[root@salt-master ~]# vim /mnt/data/salt.repo/salt/base/top.sls</span><br><span class="line">base:</span><br><span class="line">  &apos;*&apos;:</span><br><span class="line">    - one</span><br><span class="line"></span><br><span class="line">6.通过top.sls执行</span><br><span class="line">[root@salt-master ~]# salt &apos;salt-minion-187&apos; state.apply saltenv=base test=True</span><br><span class="line">或者:</span><br><span class="line">[root@salt-master ~]# salt &apos;salt-minion-187&apos; state.apply saltenv=base</span><br><span class="line">或者:</span><br><span class="line">[root@salt-master ~]# salt &apos;salt-minion-187&apos; state.apply</span><br><span class="line">salt-minion-187:</span><br><span class="line">----------</span><br><span class="line">          ID: /tmp/foo.conf</span><br><span class="line">    Function: file.managed</span><br><span class="line">      Result: True</span><br><span class="line">     Comment: File /tmp/foo.conf is in the correct state</span><br><span class="line">     Started: 10:42:49.669735</span><br><span class="line">    Duration: 33.76 ms</span><br><span class="line">     Changes:   </span><br><span class="line"></span><br><span class="line">Summary for salt-minion-187</span><br><span class="line">------------</span><br><span class="line">Succeeded: 1</span><br><span class="line">Failed:    0</span><br><span class="line">------------</span><br><span class="line">Total states run:     1</span><br><span class="line">Total run time:  33.760 ms</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/15/salt-manage-states/" data-id="cjavy9k6o00aa0coqobismwpd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-salt-manage-module" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/14/salt-manage-module/" class="article-date">
+  <time datetime="2017-11-14T11:37:24.000Z" itemprop="datePublished">2017-11-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/salt/">salt</a>►<a class="article-category-link" href="/categories/automation/salt/salt-manage-module/">salt manage module</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/14/salt-manage-module/">salt manage module</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="salt-针对管理对象操作"><a href="#salt-针对管理对象操作" class="headerlink" title="salt 针对管理对象操作"></a>salt 针对管理对象操作</h3><ol>
+<li><p>salt module组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Module是我们日常使用SaltStack接触最多的一个组件,它是SaltStack通过Push的方式进行管理的入口.比如:我们日常简单的执行命令,查看包安装情况,查看服务运行情况等工作都是通过SaltStack Module来实现的</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看modules</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master base]<span class="comment"># salt 'salt-minion-187' sys.list_modules</span></span><br><span class="line">[root@salt-master base]<span class="comment"># salt 'salt-minion-187' sys.list_functions sys</span></span><br><span class="line">[root@salt-master base]<span class="comment"># salt 'salt-minion-187' sys.doc sys</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行modules</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master base]<span class="comment"># salt 'salt-minion-187' test.echo</span></span><br><span class="line">[root@salt-master base]<span class="comment"># salt 'salt-minion-187' test.echo,cmd.run</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看file_roots位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># vim /etc/salt/master</span></span><br><span class="line">file_roots:</span><br><span class="line">  base:</span><br><span class="line">    - /mnt/data/salt.repo/salt/base</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建_modules目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># mkdir -p /mnt/data/salt.repo/salt/base/_modules</span></span><br><span class="line">def world():</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    This is my first function.</span></span><br><span class="line"><span class="string">    CLI Example:</span></span><br><span class="line"><span class="string">      salt '*' hello.world</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="built_in">return</span> <span class="string">'Hello, world!'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将模块推送到minion端</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># salt 'salt-minion-187' saltutil.sync_modules</span></span><br><span class="line">salt-minion-187:</span><br><span class="line">    - modules.hello</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看minion端的模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># salt 'salt-minion-187' sys.list_modules|grep hello</span></span><br><span class="line">    - hello</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行minion端的模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master ~]<span class="comment"># salt 'salt-minion-187' hello.world</span></span><br><span class="line">salt-minion-187:</span><br><span class="line">    Hello, world!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特别说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们可以通过&quot;__salt__&quot;,&quot;__grains__&quot;和&quot;__pillar__&quot;函数调用所有其他执行模块,就像使用salt命令一样简单</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/14/salt-manage-module/" data-id="cjavy9k6k00a60coqq3r5illi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-salt-manage-pillar" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/14/salt-manage-pillar/" class="article-date">
+  <time datetime="2017-11-14T09:45:46.000Z" itemprop="datePublished">2017-11-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/salt/">salt</a>►<a class="article-category-link" href="/categories/automation/salt/salt-manage-pillar/">salt manage pillar</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/14/salt-manage-pillar/">salt manage pillar</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="salt-数据管理中心"><a href="#salt-数据管理中心" class="headerlink" title="salt 数据管理中心"></a>salt 数据管理中心</h3><ol>
+<li><p>salt pillar组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pillar是SaltStack组件中非常重要的组件之一,它在SaltStack中主要的作用就是存储和定义配置管理中需要的一些数据,比如:软件版本号,用户名密码等信息.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看pillar位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master]<span class="comment"># cat /etc/salt/master</span></span><br><span class="line">pillar_roots:</span><br><span class="line">  base:</span><br><span class="line">    - /mnt/data/salt.repo/pillar/base</span><br><span class="line">  dev:</span><br><span class="line">    - /mnt/data/salt.repo/pillar/dev</span><br><span class="line">  prod:</span><br><span class="line">    - /mnt/data/salt.repo/pillar/prod</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在pillar工作目录创建top.sls文件并引用两个sls文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master]<span class="comment"># vim /mnt/data/salt.repo/pillar/base/top.sls</span></span><br><span class="line">base:</span><br><span class="line">  <span class="string">'*'</span>:</span><br><span class="line">    - packages</span><br><span class="line">    - services</span><br><span class="line"></span><br><span class="line">[root@salt-master]<span class="comment"># vim /mnt/data/salt.repo/pillar/base/packages.sls</span></span><br><span class="line">zabbix:</span><br><span class="line">  package-name: zabbix</span><br><span class="line">  version: 2.2.4</span><br><span class="line"></span><br><span class="line">[root@salt-master]<span class="comment"># vim /mnt/data/salt.repo/pillar/base/services.sls</span></span><br><span class="line">zabbix:</span><br><span class="line">  port: 10050</span><br><span class="line">  user: zabbix</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用refresh_pillar命令进行刷新,只能放在master端</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master]<span class="comment"># salt 'salt-minion-187' saltutil.refresh_pillar</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过pillar.items获取相关信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master]<span class="comment"># salt 'salt-minion-187' pillar.item zabbix</span></span><br><span class="line">salt-minion-187:</span><br><span class="line">    ----------</span><br><span class="line">    zabbix:</span><br><span class="line">        ----------</span><br><span class="line">        package-name:</span><br><span class="line">            zabbix</span><br><span class="line">        port:</span><br><span class="line">            10050</span><br><span class="line">        user:</span><br><span class="line">            zabbix</span><br><span class="line">        version:</span><br><span class="line">            2.2.4</span><br><span class="line"></span><br><span class="line">[root@salt-master]<span class="comment"># salt 'salt-minion-187' pillar.item zabbix:package-name</span></span><br><span class="line">salt-minion-187:</span><br><span class="line">    ----------</span><br><span class="line">    zabbix:package-name:</span><br><span class="line">        zabbix</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看相关grains命令和帮助</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">salt minion sys.list_functions pillar</span><br><span class="line">salt minion sys.doc pillar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>根据操作系统版本进行包安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[root@salt-master]<span class="comment"># vim /mnt/data/salt.repo/pillar/base/top.sls</span></span><br><span class="line">base:</span><br><span class="line">  <span class="string">'*'</span>:</span><br><span class="line">    - packages</span><br><span class="line"></span><br><span class="line">[root@salt-master]<span class="comment"># vim /mnt/data/salt.repo/pillar/base/packages.sls</span></span><br><span class="line">pkgs:</span><br><span class="line">  &#123;% <span class="keyword">if</span> grains[<span class="string">'os'</span>] == <span class="string">'CentOS'</span> %&#125;</span><br><span class="line">  apache: httpd</span><br><span class="line">  git: git</span><br><span class="line">  &#123;% <span class="keyword">elif</span> grains[<span class="string">'os'</span>] == <span class="string">'SUSE'</span> %&#125;</span><br><span class="line">  apache: apache2</span><br><span class="line">  git: git-core</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">[root@salt-master]<span class="comment"># salt 'salt-minion-187' saltutil.refresh_pillar</span></span><br><span class="line"></span><br><span class="line">[root@salt-master]<span class="comment"># salt 'salt-minion-187' pillar.item pkgs</span></span><br><span class="line">salt-minion-187:</span><br><span class="line">    ----------</span><br><span class="line">    pkgs:</span><br><span class="line">        ----------</span><br><span class="line">        apache:</span><br><span class="line">            httpd</span><br><span class="line">        git:</span><br><span class="line">            git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>state组件里调用pillar</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apache:</span><br><span class="line">  pkg.installed:</span><br><span class="line">    - name: &#123;&#123; pillar[<span class="string">'pkgs'</span>][<span class="string">'apache'</span>] &#125;&#125;</span><br><span class="line"></span><br><span class="line">或者:</span><br><span class="line"></span><br><span class="line">apache:</span><br><span class="line">  pkg.installed:</span><br><span class="line">    - name: &#123;&#123; salt[<span class="string">'pillar.get'</span>](<span class="string">'pkgs:apache'</span>, <span class="string">'httpd'</span>) &#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>敏感数据加密</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">*/pillar/base/database.sls:</span><br><span class="line">dbname: project</span><br><span class="line">dbuser: username</span><br><span class="line">dbpass: password</span><br><span class="line">dbhost: localhost</span><br><span class="line"></span><br><span class="line"><span class="comment"># cat website.conf</span></span><br><span class="line">// MySQL settings</span><br><span class="line">define(<span class="string">'DB_NAME'</span>, <span class="string">'&#123;&#123; pillar['</span>dbname<span class="string">'] &#125;&#125;'</span>);</span><br><span class="line">// MySQL database username</span><br><span class="line">define(<span class="string">'DB_USER'</span>, <span class="string">'&#123;&#123; pillar['</span>dbuser<span class="string">'] &#125;&#125;'</span>);</span><br><span class="line">// MySQL database password</span><br><span class="line">define(<span class="string">'DB_PASSWORD'</span>, <span class="string">'&#123;&#123; pillar['</span>dbpass<span class="string">'] &#125;&#125;'</span>);</span><br><span class="line">// MySQL hostname</span><br><span class="line">define(<span class="string">'DB_HOST'</span>, <span class="string">'&#123;&#123; pillar['</span>dbhost<span class="string">'] &#125;&#125;'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/14/salt-manage-pillar/" data-id="cjavy9k6l00a70coqg3k71rdn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-salt-manage-grains" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/14/salt-manage-grains/" class="article-date">
+  <time datetime="2017-11-14T08:33:17.000Z" itemprop="datePublished">2017-11-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/salt/">salt</a>►<a class="article-category-link" href="/categories/automation/salt/salt-manage-grains/">salt manage grains</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/14/salt-manage-grains/">salt manage grains</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="salt-管理对象属性"><a href="#salt-管理对象属性" class="headerlink" title="salt 管理对象属性"></a>salt 管理对象属性</h3><ol>
+<li><p>salt grains组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Grains是SaltStack组件中非常重要的组件之一,它是SaltStack记录Minion的一些静态信息的组件,例如:CPU,内存,磁盘,网络信息等.</span><br><span class="line">Minions的Grains信息是Minions启动的时候采集汇报给Master的,在实际应用环境中我们需要根据自己的业务需求去自定义一些Grains.</span><br><span class="line">Grains存储的是静态信息,静态信息,静态信息!!!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看minion所有grains信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">salt minion grains.items</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义grains方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">方法一: 通过Minion配置文件定义</span><br><span class="line">1.修改配置文件/etc/salt/minion.d/grains:</span><br><span class="line">grains:</span><br><span class="line">  roles:</span><br><span class="line">    - webserver</span><br><span class="line">    - memcache</span><br><span class="line">  deployment: datacenter4</span><br><span class="line">  cabinet: 13</span><br><span class="line">  cab_u: 14-15</span><br><span class="line">2.重启salt-minion</span><br><span class="line">3.salt-master验证</span><br><span class="line">  salt &apos;minion&apos; grains.item roles</span><br><span class="line"></span><br><span class="line">方法二: 通过Grains相关模块定义</span><br><span class="line">1.定义grains</span><br><span class="line">  salt &apos;minion&apos; grains.append hosttype &apos;online&apos;</span><br><span class="line">  salt &apos;minion&apos; grains.item hosttype</span><br><span class="line">  或:</span><br><span class="line">  salt &apos;minion&apos; grains.setvals &quot;&#123;&apos;idc&apos;:&apos;Z1&apos;,&apos;city&apos;:&apos;BJ&apos;&#125;&quot;</span><br><span class="line">  salt &apos;minion&apos; grains.item idc</span><br><span class="line"></span><br><span class="line">方法三: 通过Python脚本定义</span><br><span class="line">1.查看file_roots</span><br><span class="line">[root@salt-master ~]# cat /etc/salt/master</span><br><span class="line">file_roots:</span><br><span class="line">  base:</span><br><span class="line">    - /mnt/data/salt.repo/salt/base</span><br><span class="line">2.创建_grains目录</span><br><span class="line">[root@salt-master ~]# mkdir /mnt/data/salt.repo/salt/base/_grains</span><br><span class="line">3.创建python脚本</span><br><span class="line">[root@salt-master ~]# cat /mnt/data/salt.repo/salt/base/_grains/get_time.py</span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">from datetime import datetime</span><br><span class="line">def get_server_time():</span><br><span class="line">    grains = &#123;&#125;</span><br><span class="line">    grains[&apos;server_time&apos;] = datetime.now().strftime(&apos;%Y-%m-%d %H:%M:%S&apos;)</span><br><span class="line">    return grains</span><br><span class="line">4.使用sync_grains命令同步脚本到minion主机</span><br><span class="line">[root@salt-master ~]# salt &apos;salt-minion-187&apos; saltutil.sync_grains</span><br><span class="line">salt-minion-187:</span><br><span class="line">    - grains.get_time</span><br><span class="line">5.通过grains.item获取相关信息</span><br><span class="line">[root@salt-master ~]# salt &apos;salt-minion-187&apos; grains.item server_time</span><br><span class="line">salt-minion-187:</span><br><span class="line">    ----------</span><br><span class="line">    server_time:</span><br><span class="line">        2017-11-14 17:05:33</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>grains优先级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">grains配置优先级:</span><br><span class="line">minion端自定义grains配置(/etc/salt/minion.d/grains.conf或/etc/salt/minion) &gt;</span><br><span class="line">master端自定义grains脚本(minion端/var/cache/salt/minion/extmods/grains目录下) &gt;</span><br><span class="line">master端Grains模块定义(minion端/etc/salt/grains文件)</span><br><span class="line"></span><br><span class="line">注意: 当同步自定义grains脚本时,最好如下操作</span><br><span class="line">[root@salt-master ~]# mv /mnt/data/salt.repo/salt/base/&#123;_grains,_grains.bak&#125;</span><br><span class="line">[root@salt-master ~]# salt &apos;salt-minion-187&apos; saltutil.sync_grains</span><br><span class="line">[root@salt-master ~]# mv /mnt/data/salt.repo/salt/base/&#123;_grains.bak,_grains&#125;</span><br><span class="line">[root@salt-master base]# salt &apos;salt-minion-187&apos; saltutil.sync_grains</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看相关grains命令和帮助</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">salt minion sys.list_functions grains</span><br><span class="line">salt minion sys.doc grains</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/11/14/salt-manage-grains/" data-id="cjavy9k6h00a40coqptwr792m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AliCloud/">AliCloud</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AliCloud/SDK/">SDK</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AliCloud/SDK/Python-SDK/">Python SDK</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Android-install/">Android install</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Android-install/Android-studio-install/">Android studio install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/">Doc</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/HTTP-严格传输安全HSTS/">HTTP 严格传输安全HSTS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/HTTP协议/">HTTP协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/TCP-协议详解/">TCP 协议详解</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/TCP与socket区别/">TCP与socket区别</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/linux-文件描述符与打开文件之间的关系/">linux 文件描述符与打开文件之间的关系</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/linux-文件系统inode/">linux 文件系统inode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/一次完整的HTTP请求/">一次完整的HTTP请求</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Disk/">Disk</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Disk/disk-io-performance/">disk io performance</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Disk/disk-iostat/">disk iostat</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/">Distributed storage</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/">GlusterFS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/GlusterFS-architecture/">GlusterFS architecture</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/GlusterFS-info/">GlusterFS info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/GlusterFS-install/">GlusterFS install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/GlusterFS-workflow/">GlusterFS workflow</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HA/">HA</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HA/DRBD/">DRBD</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HA/DRBD/DRBD-install/">DRBD install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HA/keepalived/">keepalived</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HA/keepalived/keepalived-install/">keepalived install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/">IDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/Intellij/">Intellij</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/Intellij/Intellij-setting/">Intellij setting</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/vim/">vim</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/vim/vim-shortcut-key/">vim shortcut key</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/vim/vim-vimrc/">vim vimrc</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kernel/">Kernel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Kernel/kernel-memory/">kernel memory</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Kernel/kernel-memory/kernel-共享内存/">kernel 共享内存</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/">Monitor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/ganglia/">ganglia</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/ganglia/ganglia-install/">ganglia install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/hmonitor/">hmonitor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/hmonitor/hmonitor-install/">hmonitor install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/htmonitor/">htmonitor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/htmonitor/htmonitor-install/">htmonitor install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/smokeping/">smokeping</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/smokeping/smokeping-install/">smokeping install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/">zabbix</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/monitor/">monitor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/monitor/zabbix-monitor-cpu/">zabbix monitor cpu</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/monitor/zabbix-monitor-mem/">zabbix monitor mem</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-auto-discover/">zabbix auto discover</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-grafana-install/">zabbix grafana install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-install/">zabbix install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-install-distributed/">zabbix install distributed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-item-and-tigger/">zabbix item and tigger</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-java-gateway/">zabbix java gateway</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-modify-login-user-passwd/">zabbix modify login user passwd</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-optimization/">zabbix optimization</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-proxy-install/">zabbix proxy install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-server-support-chinese/">zabbix server support chinese</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-windows-agent/">zabbix windows agent</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/树莓派/">树莓派</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/树莓派/树莓派-GSM-语音短信报警/">树莓派 GSM 语音短信报警</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/监控/">监控</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/监控/监控知识体系/">监控知识体系</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Framework/">Python Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Framework/Python-Django/">Python Django</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Framework/Python-Django-setting/">Python Django setting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Framework/Python-tornado-install/">Python tornado install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/">Python Learn</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-上下文管理器/">python 上下文管理器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-内存管理/">python 内存管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-函数编程/">python 函数编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-变量/">python 变量</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-对象使用/">python 对象使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-对象的属性/">python 对象的属性</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-对象编程/">python 对象编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-数据类型/">python 数据类型</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-流程控制/">python 流程控制</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-爬虫/">python 爬虫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-特殊方法/">python 特殊方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-特殊说明/">python 特殊说明</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-装饰器/">python 装饰器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-过程编程/">python 过程编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-进阶/">python 进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-闭包/">python 闭包</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/">Python install</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-error-info/">python error info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-pip-source-image/">python pip source image</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-pip-use/">python pip use</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-pyenv-install/">python pyenv install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-setup-py/">python setup.py</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-source-install/">python source install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-virtualenv/">python virtualenv</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-library/">Python library</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-library/MySQLdb/">MySQLdb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-library/memory-profiler/">memory_profiler</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-library/time-datetime-calendar/">time datetime calendar</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-modules/">Python modules</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-modules/python-modules-path/">python modules path</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-modules/python-modules-pylint-and-ipython/">python modules pylint and ipython</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-other/">Python other</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-other/python-import-and-reload/">python import and reload</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Ruby-install/">Ruby install</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Ruby-install/Ruby-install/">Ruby install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/">TCP.IP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/TCP-状态/">TCP 状态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/TCP-IP模型/">TCP/IP模型</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/Wireshark-use/">Wireshark use</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WeChat/">WeChat</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WeChat/WeChat-enterprise/">WeChat enterprise</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WeChat/WeChat-enterprise/WeChat-enterprise-API/">WeChat enterprise API</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/">automation</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/">git</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-command/">git command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-error/">git error</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-gitlab/">git gitlab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-gitolite/">git gitolite</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-gogs/">git gogs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-gogs-source-install/">git gogs source install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-init/">git init</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-workflow/">git workflow</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/jenkins/">jenkins</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/jenkins/jenkins-info/">jenkins info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/jenkins/jenkins-install/">jenkins install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/kvm/">kvm</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/kvm/kvm-install/">kvm install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/maven/">maven</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/maven/maven-install/">maven install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/nexus/">nexus</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/nexus/nexus-install/">nexus install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/nexus/nexus-proxy-maven/">nexus proxy maven</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/rpm/">rpm</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/rpm/rpm-package-build/">rpm package build</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/rpm/rpmbuild-spec/">rpmbuild spec</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/">salt</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-advanced-topic/">salt advanced topic</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-highstate/">salt highstate</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-info/">salt info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-install/">salt install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-install-HA/">salt install HA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-install-distributed/">salt install distributed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-install-standard/">salt install standard</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-jinja2-grain-pillar-module/">salt jinja2 grain pillar module</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-event-reactor/">salt manage event reactor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-grains/">salt manage grains</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-job/">salt manage job</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-module/">salt manage module</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-pillar/">salt manage pillar</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-return/">salt manage return</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-states/">salt manage states</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-target/">salt manage target</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-master-syndic-install/">salt master syndic install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-master-conf/">salt master.conf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-minion-conf/">salt minion.conf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-raet/">salt raet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-state-module/">salt state module</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-syndic-conf/">salt syndic.conf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-write-module-code/">salt write module code</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/svn/">svn</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/svn/svn-auto-update/">svn auto update</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/yum/">yum</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/yum/yum-server-install/">yum server install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/">Mongo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-auth/">mongo auth</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-error/">mongo error</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-replication-auth-install/">mongo replication auth install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-replication-standard-install/">mongo replication standard install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-standard-install/">mongo standard install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/">Mysql</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-command/">mysql command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-error-info/">mysql error info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-explain/">mysql explain</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-grant/">mysql grant</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-index-options/">mysql index options</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-innodb-buffer-pool-flush/">mysql innodb buffer pool flush</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-master-slave/">mysql master slave</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-master-slave-switch/">mysql master slave switch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-partition/">mysql partition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-select-join/">mysql select join</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-slow-log/">mysql slow log</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-standard/">mysql standard</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-table-size/">mysql table size</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-use-memory-as-disk/">mysql use memory as disk</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/">Postgresql</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-book-use/">postgresql book use</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-master-slave-info/">postgresql master slave info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-master-slave/">postgresql master/slave</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-plugin-install/">postgresql plugin install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-standard/">postgresql standard</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-tablespace-database-schema-table-user-role-relation/">postgresql tablespace database schema table user role relation</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-yum-install/">postgresql yum install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-常用命令/">postgresql 常用命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-数据库对象/">postgresql 数据库对象</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-数据库管理/">postgresql 数据库管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/">Redis</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-error/">redis error</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-install/">redis install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-redis-trib-rb/">redis redis-trib.rb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-status/">redis status</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-use/">redis use</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/influxDB/">influxDB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/influxDB/influxDB-install/">influxDB install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/golang/">golang</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/golang/go-env/">go env</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/">hadoop</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/">RabbitMQ</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-cluster/">RabbitMQ cluster</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-high-availability/">RabbitMQ high availability</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-info/">RabbitMQ info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-install/">RabbitMQ install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-python-pika/">RabbitMQ python pika</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-user-and-grant/">RabbitMQ user and grant</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-working-principle/">RabbitMQ working principle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/beats/">beats</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/beats/beats-install/">beats install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/datax/">datax</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/datax/datax-info/">datax info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/datax/datax-install/">datax install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/datax/datax-job/">datax job</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/">elasticsearch</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-backup-and-restore/">elasticsearch backup and restore</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-command/">elasticsearch command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-core-component/">elasticsearch core component</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-exploring-your-cluster/">elasticsearch exploring your cluster</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-exploring-your-data/">elasticsearch exploring your data</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-four-search-type/">elasticsearch four search type</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-full-cluster-restart-upgrade/">elasticsearch full cluster restart upgrade</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-install/">elasticsearch install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-modifying-your-data/">elasticsearch modifying your data</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-rolling-upgrades/">elasticsearch rolling upgrades</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-safe-restart/">elasticsearch safe restart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-shard/">elasticsearch shard</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/how-to-tune-for-indexing-speed/">how to tune for indexing speed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/how-to-tune-for-search-speed/">how to tune for search speed</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/flume/">flume</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/flume/flume-info/">flume info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/flume/flume-install/">flume install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/grafana/">grafana</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/grafana/grafana-install/">grafana install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/hadoop/">hadoop</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/hadoop/hadoop-简介/">hadoop 简介</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/">kafka</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-add-topic-partition/">kafka add topic partition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-add-topic-replicats/">kafka add topic replicats</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-broker-config/">kafka broker config</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-high-throughput/">kafka high throughput</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-info/">kafka info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-install/">kafka install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-manage-web/">kafka manage web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-migrate-and-scale/">kafka migrate and scale</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-offset-monitor/">kafka offset monitor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-optimize/">kafka optimize</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-use/">kafka use</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-web-console/">kafka web console</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-with-zookeeper/">kafka with zookeeper</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kibana/">kibana</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kibana/kibana-install/">kibana install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/">logstash</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/logstash-config-file/">logstash config file</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/logstash-filter-grok/">logstash filter grok</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/logstash-info/">logstash info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/logstash-install/">logstash install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/mycat/">mycat</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/mycat/mycat-jvm-optimize/">mycat jvm optimize</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/mycat/mycat-web-install/">mycat web install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/nsq/">nsq</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/nsq/nsq-command/">nsq command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/nsq/nsq-info/">nsq info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/nsq/nsq-install/">nsq install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/">zookeeper</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-install/">zookeeper install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-monitor/">zookeeper monitor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-optimize/">zookeeper optimize</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-use/">zookeeper use</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-zab-protocol/">zookeeper zab protocol</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-env/">java env</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-jvm-optimize/">java jvm optimize</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-jvm-opts/">java jvm opts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-jvm-原理/">java jvm 原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-learn/">java learn</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-learn/java-学习笔记/">java 学习笔记</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-log4j/">java log4j</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-performance-analysis/">java performance analysis</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-performance-analysis/jps/">jps</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/k8s/">k8s</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/k8s/k8s-dashboard-install/">k8s dashboard install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/k8s/k8s-install/">k8s install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/k8s/k8s-registry-install/">k8s registry install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/node/node-install/">node install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/other/ACID/">ACID</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/分布式二阶段和三阶段提交协议/">分布式二阶段和三阶段提交协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/开源许可协议/">开源许可协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/网络带宽/">网络带宽</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/">system service</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/">Atlassian</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/confluence-https/">confluence https</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/confluence-install/">confluence install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/confluence-reset-passwd/">confluence reset passwd</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/confluence-update/">confluence update</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/jira-https/">jira https</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/jira-install/">jira install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/jira-update/">jira update</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/mariadb-install/">mariadb install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/">CentOS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/Base-env/">Base env</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-common-use-scripts/">linux common use scripts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-history-info-setting/">linux history info setting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-login-info/">linux login info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-nginx-install/">linux nginx install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-skill/">linux skill</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-system-init/">linux system init</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-内存插槽-内存信息/">linux 内存插槽 内存信息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-扩容swap分区/">linux 扩容swap分区</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-物理CPU-CPU核数-逻辑CPU/">linux 物理CPU CPU核数 逻辑CPU</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-磁盘系统block区别/">linux 磁盘系统block区别</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-设置-包含头文件路径-和-动态库链接路径/">linux 设置 包含头文件路径 和 动态库链接路径</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/make提高源码编译速度/">make提高源码编译速度</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/NFS/">NFS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/NFS/nfs-exports-command/">nfs exports command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/NFS/nfs-install/">nfs install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Samba/">Samba</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Samba/samba-conf/">samba conf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Samba/samba-install/">samba install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/">command</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/grep/">grep</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/pigz/">pigz</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/sed/">sed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/split/">split</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/tr/">tr</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/haproxy/">haproxy</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/haproxy/haproxy-install/">haproxy install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/">nginx</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/nginx-install/">nginx install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/nginx-location/">nginx location</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/nginx-rewrite/">nginx rewrite</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/nginx-status/">nginx status</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/ntpd/">ntpd</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/ntpd/ntpd-install/">ntpd install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/openssl/">openssl</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/openssl/openssl-certificate/">openssl certificate</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/openvpn/">openvpn</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/openvpn/openvpn-install/">openvpn install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/rsync/">rsync</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/rsync/rsync-install/">rsync install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/supersord/">supersord</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/supersord/supersord-install/">supersord install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/">vsftpd</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/ftp-proxy/">ftp proxy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/vsftpd-error/">vsftpd error</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/vsftpd-info/">vsftpd info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/vsftpd-install/">vsftpd install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/windows/">windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/windows/cygwin-install/">cygwin install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/windows/ipsec-set/">ipsec set</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/windows/windows-modify-hosts/">windows modify hosts</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/SSL/">SSL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/SSL/SSL-certificate/">SSL certificate</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/angular/">angular</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/angular/angular-install/">angular install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/hexo/">hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/hexo/hexo-install/">hexo install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/sass/">sass</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/sass/sass-install/">sass install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/xml/">xml</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/xml/xml-format/">xml format</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/01/hello-everyone/">Hello Everyone</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/28/kafka-web-console/">kafka web console</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/svn-auto-update/">svn auto update</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/15/salt-manage-event-reactor/">salt manage event reactor</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/15/salt-manage-job/">salt manage job</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 penn<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

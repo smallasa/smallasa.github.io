@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>smallasa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="smallasa">
+<meta property="og:url" content="http://www.smallasa.com/page/11/index.html">
+<meta property="og:site_name" content="smallasa">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="smallasa">
+  
+    <link rel="alternate" href="/atom.xml" title="smallasa" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">smallasa</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I known what i do !</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.smallasa.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-WeChat-enterprise" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/19/WeChat-enterprise/" class="article-date">
+  <time datetime="2017-06-19T01:43:00.000Z" itemprop="datePublished">2017-06-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/WeChat/">WeChat</a>►<a class="article-category-link" href="/categories/WeChat/WeChat-enterprise/">WeChat enterprise</a>►<a class="article-category-link" href="/categories/WeChat/WeChat-enterprise/WeChat-enterprise-API/">WeChat enterprise API</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/19/WeChat-enterprise/">WeChat enterprise</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="微信企业号"><a href="#微信企业号" class="headerlink" title="微信企业号"></a>微信企业号</h3><ol>
+<li>通过API获取access_token<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@wechat]<span class="comment"># cat access_token.ops.py</span></span><br><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*-coding:utf-8-*-</span></span><br><span class="line">import urllib</span><br><span class="line">import urllib2</span><br><span class="line">import json</span><br><span class="line">import os</span><br><span class="line">url = <span class="string">"https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=&#123;微信ID号,唯一&#125;&amp;corpsecret=&#123;应用秘钥&#125;"</span></span><br><span class="line">req = urllib2.Request(url)</span><br><span class="line">res_data = urllib2.urlopen(req)</span><br><span class="line">res = res_data.read()</span><br><span class="line"><span class="built_in">print</span>(json.dumps(json.loads(res),indent=2,sort_keys=False,ensure_ascii=False))</span><br><span class="line"></span><br><span class="line">[root@cmdb wechat]<span class="comment"># python access_token.ops.py</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"access_token"</span>: <span class="string">"ZAyxiNS0-PIWLkDEqLFx1_-wXxJXJQYzjYt3fl8XxwEMGiQVixEsn2xKVc9ZLiJ_u6K6iN2IxFbxiV4jJi_nxyhS2l6a8TfvS7lMGvFBcwA_m4wlAQs0URSwaisGGEmlpRumUtQ-8LN8wKo9NTvpLv-o3kbteVdOadsfadfadsfafdadfasdfadf"</span>,</span><br><span class="line">  <span class="string">"expires_in"</span>: 7200,</span><br><span class="line">  <span class="string">"errcode"</span>: 0,</span><br><span class="line">  <span class="string">"errmsg"</span>: <span class="string">"ok"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/19/WeChat-enterprise/" data-id="cjavy9ju700110coq8zfa76k3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-openssl-certificate" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/18/openssl-certificate/" class="article-date">
+  <time datetime="2017-06-18T15:27:41.000Z" itemprop="datePublished">2017-06-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/system-service/">system service</a>►<a class="article-category-link" href="/categories/system-service/openssl/">openssl</a>►<a class="article-category-link" href="/categories/system-service/openssl/openssl-certificate/">openssl certificate</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/18/openssl-certificate/">openssl certificate</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="openssl创建证书"><a href="#openssl创建证书" class="headerlink" title="openssl创建证书"></a>openssl创建证书</h3><ol>
+<li><p>openssl创建证书</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">root@192:~# mkdir -p /opt/nginx/ssl</span><br><span class="line">root@192:~# cd /opt/nginx/ssl/</span><br><span class="line">root@192:/opt/nginx/ssl# openssl req -newkey rsa:4096 -nodes -sha256 -keyout domain.key -x509 -days 365 -out domain.crt</span><br><span class="line">Generating a 4096 bit RSA private key</span><br><span class="line">........++</span><br><span class="line">.........................................................................................................................................................................................................................................++</span><br><span class="line">writing new private key to \&apos;domain.key\&apos;</span><br><span class="line">\-----</span><br><span class="line">You are about to be asked to enter information that will be incorporated</span><br><span class="line">into your certificate request.</span><br><span class="line">What you are about to enter is what is called a Distinguished Name or a DN.</span><br><span class="line">There are quite a few fields but you can leave some blank</span><br><span class="line">For some fields there will be a default value,</span><br><span class="line">If you enter &apos;.&apos;, the field will be left blank.</span><br><span class="line">\-----</span><br><span class="line">Country Name (2 letter code) [AU]:CN</span><br><span class="line">State or Province Name (full name) [Some-State]:BJ</span><br><span class="line">Locality Name (eg, city) []:bj</span><br><span class="line">Organization Name (eg, company) [Internet Widgits Pty Ltd]:zhonghui</span><br><span class="line">Organizational Unit Name (eg, section) []:</span><br><span class="line">Common Name (e.g. server FQDN or YOUR name) []:d.hub.io</span><br><span class="line">Email Address []:pengliu@brandwisdom.cn</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>openssl 将证书crt转换为cer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@192:~# openssl x509 -in domain.crt -out domain.cer -outform der</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/18/openssl-certificate/" data-id="cjavy9k28007f0coqa8g8ap6t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-alicloud-API" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/13/alicloud-API/" class="article-date">
+  <time datetime="2017-06-13T09:48:41.000Z" itemprop="datePublished">2017-06-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/AliCloud/">AliCloud</a>►<a class="article-category-link" href="/categories/AliCloud/SDK/">SDK</a>►<a class="article-category-link" href="/categories/AliCloud/SDK/Python-SDK/">Python SDK</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/13/alicloud-API/">alicloud API</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="阿里云-python-SDK-环境搭建"><a href="#阿里云-python-SDK-环境搭建" class="headerlink" title="阿里云 python SDK 环境搭建"></a>阿里云 python SDK 环境搭建</h3><ol>
+<li><p>申请账号(这里是只读)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">阿里云RAM账号申请,步骤如下:</span><br><span class="line">* 先登录到阿里云控制台</span><br><span class="line">* 选择&quot;访问控制&quot;</span><br><span class="line">* 选择&quot;策略管理&quot;,自定义一个新的策略</span><br><span class="line">* 选择&quot;群组管理&quot;,创建一个新的组,并对该组授权&quot;自定义策略&quot;</span><br><span class="line">* 选择&quot;用户管理&quot;,创建一个新的用户,将用户加入到组.选择&quot;用户详情&quot;,创建&quot;用户AccessKey&quot;,注意一定要保存好key.禁止&quot;启用控制台登录&quot;,我们不需要控制台登录,没必要打开.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>阿里云 Python SDK 环境部署</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">* 安装pyenv和python虚拟化环境(安装步骤忽略)</span><br><span class="line">* 安装python版本</span><br><span class="line">  [root@cmdb ~]# pyenv install 2.7.13</span><br><span class="line">* 创建python虚拟化环境</span><br><span class="line">  [root@cmdb ~]# pyenv virtualenv 2.7.13 cloud</span><br><span class="line">* 安装python sdk</span><br><span class="line">  [root@cmdb ~]# pyenv activate cloud</span><br><span class="line">  (cloud) [root@cmdb ~]# pip install aliyun-python-sdk-core</span><br><span class="line">  (cloud) [root@cmdb ~]# pip install aliyun-python-sdk-ecs</span><br><span class="line">  (cloud) [root@cmdb ~]# pip install aliyun-python-sdk-rds</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/13/alicloud-API/" data-id="cjavy9jua00140coq71wqc2xu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-disk-iostat" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/13/disk-iostat/" class="article-date">
+  <time datetime="2017-06-13T00:40:51.000Z" itemprop="datePublished">2017-06-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Disk/">Disk</a>►<a class="article-category-link" href="/categories/Disk/disk-iostat/">disk iostat</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/13/disk-iostat/">disk iostat</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="磁盘IO状态查看"><a href="#磁盘IO状态查看" class="headerlink" title="磁盘IO状态查看"></a>磁盘IO状态查看</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">1.安装</span><br><span class="line">yum install sysstat</span><br><span class="line"></span><br><span class="line">2.iostat查看IO性能</span><br><span class="line">[root@zabbix-proxy-company ~]# iostat -x 1  1</span><br><span class="line">Linux 3.10.0-123.el7.x86_64 (zabbix-proxy-company)      06/13/2017      _x86_64_        (4 CPU)</span><br><span class="line"></span><br><span class="line">avg-cpu:  %user   %nice %system %iowait  %steal   %idle</span><br><span class="line">           1.73    0.00    1.31    0.70    0.00   96.26</span><br><span class="line"></span><br><span class="line">Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util</span><br><span class="line">vda               0.00     0.00    0.00    0.10     0.06     0.76    15.72     0.00    3.17    0.91    3.25   1.98   0.02</span><br><span class="line">vdb               0.00     0.02    0.00   43.64     0.00   702.61    32.20     0.10    2.19    0.36    2.19   0.81   3.53</span><br><span class="line">dm-0              0.00     0.00    0.00    0.00     0.00     0.00     8.00     0.00    0.37    0.37    0.00   0.23   0.00</span><br><span class="line">dm-1              0.00     0.00    0.00    0.08     0.06     0.76    20.10     0.00    4.40    0.94    4.55   2.56   0.02</span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">svctm参数代表平均每次设备I/O操作的服务时间(毫秒),反应了磁盘的负载情况,如果该项大于15ms,并且util%接近100%,那就说明,磁盘现在是整个系统性能的瓶颈了</span><br><span class="line">await参数代表平均每次设备I/O操作的等待时间(毫秒),也要多和svctm来参考.差的过高就一定有IO的问题.</span><br><span class="line">如果svctm比较接近await,说明I/O几乎没有等待时间;如果await远大于svctm,说明I/O队列太长,应用得到的响应时间变慢</span><br><span class="line"></span><br><span class="line">正常情况下svctm应该是小于await值的,而svctm的大小和磁盘性能有关,CPU,内存的负荷也会对svctm值造成影响,过多的请求也会间接的导致svctm值的增加.</span><br><span class="line">await值的大小一般取决与svctm的值和I/O队列长度以及I/O请求模式,如果svctm的值与await很接近,表示几乎没有I/O等待,磁盘性能很好;如果await的值远高于svctm的值,则表示I/O队列等待太长,系统上运行的应用程序将变慢,此时可以通过更换更快的硬盘来解决问题.</span><br><span class="line">%util项的值也是衡量磁盘I/O的一个重要指标,如果%util接近100%,表示磁盘产生的I/O请求太多,I/O系统已经满负荷的在工作,该磁盘可能存在瓶颈.长期下去,势必影响系统的性能,可以通过优化程序或者通过更换更高,更快的磁盘来解决此问题</span><br><span class="line"></span><br><span class="line">svctm一项正常时间在20ms左右,原因:</span><br><span class="line">高速cpu会造成很高的iowait值,但这并不代表磁盘是系统的瓶颈.唯一能说明磁盘是系统瓶颈的方法,就是很高的read/write时间,一般来说超过20ms,就代表了不太正常的磁盘性能.为什么是20ms呢?一般来说,一次读写就是一次寻到+一次旋转延迟+数据传输的时间.由于,现代硬盘数据传输就是几微秒或者几十微秒的事情,远远小于寻道时间2~20ms和旋转延迟4~8ms,所以只计算这两个时间就差不多了,也就是15~20ms.只要大于20ms,就必须考虑是否交给磁盘读写的次数太多,导致磁盘性能降低了</span><br><span class="line"></span><br><span class="line">iowait实际测量的是cpu时间：</span><br><span class="line">%iowait = (cpu idle time)/(all cpu time)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">注解:</span><br><span class="line">cpu属性值说明：</span><br><span class="line">%user：  CPU处在用户模式下的时间百分比</span><br><span class="line">%nice：  CPU处在带NICE值的用户模式下的时间百分比</span><br><span class="line">%system：CPU处在系统模式下的时间百分比</span><br><span class="line">%iowait：CPU等待输入输出完成时间的百分比</span><br><span class="line">%steal： 管理程序维护另一个虚拟处理器时,虚拟CPU的无意识等待时间百分比</span><br><span class="line">%idle：  CPU空闲时间百分比</span><br><span class="line"></span><br><span class="line">disk属性值说明:</span><br><span class="line">rrqm/s:每秒这个设备相关的读取请求有多少被Merge了(当系统调用需要读取数据的时候,VFS将请求发到各个FS,如果FS发现不同的读取请求读取的是相同Block的数据,FS会将这个请求合并Merge)</span><br><span class="line">wrqm/s:每秒这个设备相关的写入请求有多少被Merge了</span><br><span class="line"></span><br><span class="line">rsec/s:每秒读取的扇区数</span><br><span class="line">wsec/s:每秒写入的扇区数</span><br><span class="line"></span><br><span class="line">r/s:每秒完成的读I/O设备次数.即rio/s</span><br><span class="line">w/s:每秒完成的写I/O设备次数.即wio/s</span><br><span class="line"></span><br><span class="line">rkB/s:每秒读K字节数.是rsect/s的一半,因为每扇区大小为512字节</span><br><span class="line">wkB/s:每秒写K字节数.是wsect/s的一半,因为每扇区大小为512字节</span><br><span class="line"></span><br><span class="line">avgrq-sz:均每次设备I/O操作的数据大小(扇区)</span><br><span class="line">avgqu-sz:平均I/O队列长度</span><br><span class="line"></span><br><span class="line">await:每一个IO请求的处理的平均时间(单位是微秒毫秒).这里可以理解为IO的响应时间,一般地系统IO响应时间应该低于5ms,如果大于10ms就比较大了.</span><br><span class="line"></span><br><span class="line">svctm:平均每次设备I/O操作的服务时间(毫秒)</span><br><span class="line"></span><br><span class="line">%util:在统计时间内所有处理IO时间,除以总共统计时间.例如,如果统计间隔1秒,该设备有0.8秒在处理IO,而0.2秒闲置,那么该设备的%util = 0.8/1 = 80%,所以该参数暗示了设备的繁忙程度.一般地,如果该参数是100%表示设备已经接近满负荷运行了（当然如果是多磁盘,即使%util是100%,因为磁盘的并发能力,所以磁盘使用未必就到了瓶颈）</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/13/disk-iostat/" data-id="cjavy9jv3001v0coqyx9ntd2d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-zabbix-server-support-chinese" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/12/zabbix-server-support-chinese/" class="article-date">
+  <time datetime="2017-06-12T10:01:48.000Z" itemprop="datePublished">2017-06-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Monitor/">Monitor</a>►<a class="article-category-link" href="/categories/Monitor/zabbix/">zabbix</a>►<a class="article-category-link" href="/categories/Monitor/zabbix/zabbix-server-support-chinese/">zabbix server support chinese</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/12/zabbix-server-support-chinese/">zabbix server support chinese</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="zabbix-server支持中文显示"><a href="#zabbix-server支持中文显示" class="headerlink" title="zabbix server支持中文显示"></a>zabbix server支持中文显示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1.在windows系统下找到simkai.ttf(楷体)字体</span><br><span class="line">  C:Windows\Fonts\simkai.ttf</span><br><span class="line"></span><br><span class="line">2.将simkai.ttf文件上传到zabbix-server服务器</span><br><span class="line">[root@zabbix-server-company ~]# mkdir /etc/zabbix/zabbix_fonts</span><br><span class="line">[root@zabbix-server-company ~]# ls -l /etc/zabbix/zabbix_fonts/simkai.ttf</span><br><span class="line">-rw-r--r-- 1 root root 11785184 Jul 17  2016 /etc/zabbix/zabbix_fonts/simkai.ttf</span><br><span class="line">  /etc/zabbix/zabbix_fonts/simkai.ttf</span><br><span class="line"></span><br><span class="line">3.检查zabbix-server字体存放位置</span><br><span class="line">[root@zabbix-server-company zabbix]# ls -l /usr/share/zabbix/fonts/graphfont.ttf</span><br><span class="line">lrwxrwxrwx 1 root root 33 May  9 17:28 /usr/share/zabbix/fonts/graphfont.ttf -&gt; /etc/alternatives/zabbix-web-font</span><br><span class="line">[root@zabbix-server-company zabbix]# ls -l /etc/alternatives/zabbix-web-font</span><br><span class="line">lrwxrwxrwx 1 root root 38 May  9 17:28 /etc/alternatives/zabbix-web-font -&gt; /usr/share/fonts/dejavu/DejaVuSans.ttf</span><br><span class="line">[root@zabbix-server-company zabbix]# ls -l /usr/share/fonts/dejavu/DejaVuSans.ttf</span><br><span class="line">-rw-r--r-- 1 root root 720012 Feb 27  2011 /usr/share/fonts/dejavu/DejaVuSans.ttf</span><br><span class="line"></span><br><span class="line">4.重新进行软连接</span><br><span class="line">[root@zabbix-server-company ~]# ln -sf /etc/zabbix/zabbix_fonts/simkai.ttf /usr/share/zabbix/fonts/graphfont.ttf</span><br><span class="line">[root@zabbix-server-company ~]# ls -l /usr/share/zabbix/fonts/graphfont.ttf                                     </span><br><span class="line">lrwxrwxrwx 1 root root 35 Jun 12 18:08 /usr/share/zabbix/fonts/graphfont.ttf -&gt; /etc/zabbix/zabbix_fonts/simkai.ttf</span><br><span class="line"></span><br><span class="line">5.或者修改配置文件</span><br><span class="line">[root@zabbix-server-company ~]# vim /usr/share/zabbix/include/defines.inc.php</span><br><span class="line">将graphfont.ttf更改为simkai.ttf</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/12/zabbix-server-support-chinese/" data-id="cjavy9k8n00c30coq70xxng09" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-zabbix-item-and-tigger" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/09/zabbix-item-and-tigger/" class="article-date">
+  <time datetime="2017-06-09T06:23:47.000Z" itemprop="datePublished">2017-06-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Monitor/">Monitor</a>►<a class="article-category-link" href="/categories/Monitor/zabbix/">zabbix</a>►<a class="article-category-link" href="/categories/Monitor/zabbix/zabbix-item-and-tigger/">zabbix item and tigger</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/09/zabbix-item-and-tigger/">zabbix item and tigger</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="zabbix-item"><a href="#zabbix-item" class="headerlink" title="zabbix item"></a>zabbix item</h3><ol>
+<li>net.tcp.listen[port]<br><strong>检测端口是否开启:<br> 0 – 未监听<br> 1 – 监听中</strong></li>
+</ol>
+<hr>
+<h3 id="zabbix-tigger"><a href="#zabbix-tigger" class="headerlink" title="zabbix tigger"></a>zabbix tigger</h3><ol>
+<li><p>zabbix避免瞬时触发频繁报警</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;HOST:ITEM.count(600,100,&quot;ge&quot;)&#125;&gt;3 and &#123;HOST:ITEM.last(0)&#125;&gt;100</span><br><span class="line">说明: 在600秒内大于100 3次 且 当前大于100,就会触发报警</span><br><span class="line"></span><br><span class="line">count(时间,监控值,判断参数,延时时间)&gt;次数</span><br><span class="line">and 逻辑与</span><br><span class="line"></span><br><span class="line">判断参数：&#123;eq:相等 ne:不相等 gt:大于 ge:大于等于 lt:小于 le:小于等于 like:内容匹配&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Tigger last()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;HOST:system.cpu.load[all,avg1].last(0)&#125;&gt;5</span><br><span class="line">解释: 如果cpu.load最新值大于5则触发报警</span><br><span class="line"></span><br><span class="line">&#123;HOST:system.cpu.load[all,avg1].last(1)&#125;&gt;5</span><br><span class="line">解释: 如果cpu.load最近1秒值大于5则触发报警</span><br><span class="line"></span><br><span class="line">&#123;HOST:cpu.load[cpu.avg1].last(#2)&#125;&gt;3</span><br><span class="line">解释: cpu.load上上一个值负载大于3则触发</span><br><span class="line"></span><br><span class="line">&#123;HOST:cpu.load[cpu.avg1].last(,1d)&#125;&gt;3</span><br><span class="line">解释: 此时cpu.load负载 大于 昨日此时cpu.load负载 3则触发</span><br><span class="line">      即: &#123;此时cpu.load负载&#125; - &#123;昨日此时cpu.load负载&#125; &gt; 3</span><br><span class="line"></span><br><span class="line">&#123;HOST:system.cpu.load[all,avg1].last(0)&#125;&gt;5 | &#123;HOST:system.cpu.load[all,avg1].min(10m)&#125;&gt;2</span><br><span class="line">解释: 如果cpu.load大于5或者最后十分钟内cpu.load最小值大于2则触发报警</span><br><span class="line"></span><br><span class="line">&#123;HOST:zabbix.ping.last(#5,3m)&#125;=0</span><br><span class="line">解释: 如果最近3分钟内第5次取值结果为0,则触发报警</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Tigger max()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;HOST:system.cpu.load.max(30m)&#125;&gt;5</span><br><span class="line">解释: 30分钟内cpu负载最大值如果大于5则触发</span><br><span class="line"></span><br><span class="line">&#123;HOST:system.cpu.load.max(#5)&#125;&gt;10</span><br><span class="line">解释: cup的最近5个返回值里面,如果最大值超过10,则触发</span><br><span class="line"></span><br><span class="line">&#123;HOST:vfs.fs.size[/,free].max(5m)&#125;&lt;1G</span><br><span class="line">解释: 最近5分钟内剩余磁盘空间小于1G则触发</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Tigger min()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;HOST:if.in[eth0,bytes].min(5m)&#125;&gt;20M</span><br><span class="line">解释: eth0的input网卡在5分钟内获取的最小值持续超过20M则触发</span><br><span class="line"></span><br><span class="line">&#123;HOST:system.cpu.load[all,avg1].last(0)&#125;&gt;5 | &#123;&#123;HOST:system.cpu.load[all,avg1].min(10m)&#125;&gt;2</span><br><span class="line">解释: 最新的load值如果超过5 或 在10分钟内最小load值一直持续超过2则触发</span><br><span class="line"></span><br><span class="line">&#123;HOST:system.cpu.load[all,avg1].min(5m)&#125;&gt;10 &amp; \</span><br><span class="line">&#123;HOST:system.cpu.load[all,avg1].time(0)&#125;&gt;000000 &amp; \</span><br><span class="line">&#123;HOST:system.cpu.load[all,avg1].time(0)&#125;&lt;060000</span><br><span class="line">解释: 在晚上0-6点这段时间内如果主机在5分钟内获取load的最小值一直持续大于10则报警</span><br><span class="line"></span><br><span class="line">&#123;HOST.cpu.load.min(#30)&#125;&gt;7</span><br><span class="line">解释: cpu负载最近三十个返回值最小值大于7则触发</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Tigger nodata()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;HOST.tick.nodata(5m)&#125;=1</span><br><span class="line">解释: 如果5分钟内部等于1(没有收到数据)则触发</span><br><span class="line"></span><br><span class="line">&#123;HOST.agent.ping.nodata(5m)&#125;=1</span><br><span class="line">解释: agent.ping在最近5分钟内都没有接收到数据,则触发</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Tigger count()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">这里可以为s(秒),也可以为m(分钟):</span><br><span class="line">* count(10m) 最后10分钟值的数量</span><br><span class="line">* count(600) 最后10分钟值的数量</span><br><span class="line">* count(600,12)  最后十分钟拿到的值等于12</span><br><span class="line">* count(10m,12)  最后十分钟拿到的值等于12</span><br><span class="line">* count(600,12,&quot;gt&quot;) 最后十分钟拿到的值大于12</span><br><span class="line">* count(#10,12,&quot;gt&quot;) 最近10个值中,值大于12的个数</span><br><span class="line">* count(600,12,&quot;gt&quot;,86400) 24小时之前的10分钟内值大于12的个数</span><br><span class="line">* count(600,,,86400) 24小时之前的10分钟数据值的个数</span><br><span class="line"></span><br><span class="line">例如:</span><br><span class="line">&#123;HOST:ITEM.count(2m,0)&#125;&gt;3  </span><br><span class="line">解释: 如果2分钟内拿到的值为0,且大于3次则触发报警</span><br><span class="line"></span><br><span class="line">&#123;HOST:icmpping.count(5m,0)&#125;&gt;2</span><br><span class="line">解释: 最近分5钟内有2次ping不通就触发报警(假设30秒ping一次,5分之可以ping 10次)</span><br><span class="line"></span><br><span class="line">&#123;HOST:redis[,avg1].count(10m,10,&quot;gt&quot;)&#125;&gt;2</span><br><span class="line">解释: 最近10分钟内的平均值大于10的次数超过2次则触发报警</span><br><span class="line"></span><br><span class="line">&#123;HOST:redis.count(#10,5,&quot;gt&quot;,86400)&#125;&gt;2</span><br><span class="line">解释: 24小时之前,最近10个值中,值大于5的个数,大于2次则触发报警</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tigger delta()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#定义的评价期间内的最大和最小值之间的差异(max()-min())</span><br><span class="line"></span><br><span class="line">&#123;HOST:net.if.in[eth1].delta(300)&#125;&gt;100M</span><br><span class="line">解释: eth1流量在300秒内,最大值和最小值之间差如果大于100M,则触发</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/09/zabbix-item-and-tigger/" data-id="cjavy9k8b00bs0coqahd9s58e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nexus-proxy-maven" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/05/nexus-proxy-maven/" class="article-date">
+  <time datetime="2017-06-05T08:58:21.000Z" itemprop="datePublished">2017-06-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/automation/">automation</a>►<a class="article-category-link" href="/categories/automation/nexus/">nexus</a>►<a class="article-category-link" href="/categories/automation/nexus/nexus-proxy-maven/">nexus proxy maven</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/05/nexus-proxy-maven/">nexus proxy maven</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="nexus代理maven仓库"><a href="#nexus代理maven仓库" class="headerlink" title="nexus代理maven仓库]"></a>nexus代理maven仓库]</h3><p><strong>使用nexus代理maven仓库更新索引的方法:</strong></p>
+<ol>
+<li><p>下载更新包<br><a href="http://repo1.maven.org/maven2/.index/" target="_blank" rel="noopener">Download maven repository</a><br>[root@192 app]# wget <a href="http://repo1.maven.org/maven2/.index/nexus-maven-repository-index.gz" target="_blank" rel="noopener">http://repo1.maven.org/maven2/.index/nexus-maven-repository-index.gz</a><br>[root@192 app]# wget <a href="http://repo1.maven.org/maven2/.index/nexus-maven-repository-index.properties" target="_blank" rel="noopener">http://repo1.maven.org/maven2/.index/nexus-maven-repository-index.properties</a></p>
+<p><a href="http://maven.outofmemory.cn/org.apache.maven.indexer/indexer-cli/5.1.1/" target="_blank" rel="noopener">Download indexer-cli</a><br>[root@192 app]# wget <a href="http://central.maven.org/maven2/org/apache/maven/indexer/indexer-cli/5.1.1/indexer-cli-5.1.1.jar" target="_blank" rel="noopener">http://central.maven.org/maven2/org/apache/maven/indexer/indexer-cli/5.1.1/indexer-cli-5.1.1.jar</a></p>
+</li>
+<li><p>停止nexus<br>[root@192 app]# /mnt/app/nexus/bin/nexus stop</p>
+</li>
+<li><p>将nexus-maven-repository-index.gz,nexus-maven-repository-index.properties,indexer-cli-5.1.1.jar放在同一目录下,解压nexus-maven-repository-index.gz<br>[root@192 app]# java -jar indexer-cli-5.1.1.jar -u nexus-maven-repository-index.gz -d indexer</p>
+</li>
+<li><p>创建indexer/central-ctx目录<br>[root@192 app]# grep karaf.data /mnt/app/nexus/bin/nexus.vmoptions<br>-Dkaraf.data=/mnt/data/nexus<br>[root@192 app]# mkdir -p /mnt/data/nexus/indexer/central-ctx<br>[root@192 app]# chown -R wisdom.wisdom /mnt/data/nexus/indexer</p>
+</li>
+<li><p>拷贝indexer目录下的内容到indexer/central-ctx<br>[root@192 app]# cp indexer/* /mnt/data/nexus/indexer/central-ctx/<br>[root@192 app]# chown -R wisdom.wisdom /mnt/data/nexus/indexer</p>
+</li>
+<li><p>重启nexus<br>[root@192 app]# /mnt/app/nexus/bin/nexus start</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/05/nexus-proxy-maven/" data-id="cjavy9k1l006z0coquk9y29hg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hadoop-简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/02/hadoop-简介/" class="article-date">
+  <time datetime="2017-06-02T09:55:32.000Z" itemprop="datePublished">2017-06-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hadoop/">hadoop</a>►<a class="article-category-link" href="/categories/hadoop/hadoop/">hadoop</a>►<a class="article-category-link" href="/categories/hadoop/hadoop/hadoop-简介/">hadoop 简介</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/02/hadoop-简介/">hadoop 简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/02/hadoop-简介/" data-id="cjavy9jws003m0coqkdz0om5e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-对象使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/02/python-对象使用/" class="article-date">
+  <time datetime="2017-06-02T01:11:53.000Z" itemprop="datePublished">2017-06-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>►<a class="article-category-link" href="/categories/Python/Python-Learn/">Python Learn</a>►<a class="article-category-link" href="/categories/Python/Python-Learn/python-对象使用/">python 对象使用</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/02/python-对象使用/">python 对象使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="python对象使用"><a href="#python对象使用" class="headerlink" title="python对象使用"></a>python对象使用</h3><ol>
+<li><p>存储</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">python的数据都保存在内存中,如果断电,内存中数据就会消失.另一方面,python程序运行结束,那么分配给这个程序的内存空间也会清空.为了长期持续存储,python将数据存储在磁盘中.磁盘以文件为单位来存储数据.对于计算机来说,数据本质就是有序的二进制序列,如果以字节为单位,也就是每8位二进制序列为单位,8位的二进制序列正好对应ASCII编码中的一个字符.python借助文本对象来读写文件.</span><br><span class="line"></span><br><span class="line">例如:</span><br><span class="line">f = open(&apos;test.txt&apos;,&apos;r&apos;)</span><br><span class="line">content = f.read(10)</span><br><span class="line">content = f.readline()</span><br><span class="line">content = f.readlines()</span><br><span class="line">f.close</span><br><span class="line"></span><br><span class="line">f = open(&apos;test.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.write(&apos;I like apple\n&apos;)</span><br><span class="line">f.close</span><br><span class="line"></span><br><span class="line">文件操作常常和上下文管理器一起使用,上下文管理器用于规定某个对象的使用范围:一旦进入或者离开该使用范围,则会有特殊的操作被调用.</span><br><span class="line">例如:</span><br><span class="line">with open(&apos;test.txt&apos;,&apos;w&apos;) as f:</span><br><span class="line">    f.write(&apos;hello world !&apos;)</span><br><span class="line"></span><br><span class="line">上下文管理器有隶属于它的程序块,当隶属于程序块执行结束时,上下文管理器就会自动关闭文件</span><br><span class="line">在使用上下文管理器语法时,python会在进入程序块前调用文件对象__enter__()方法,在结束程序块时调用文件对象__exit__()方法.</span><br><span class="line"></span><br><span class="line">自定义上下文管理器:</span><br><span class="line">class Vow(object):</span><br><span class="line">    def __init__(self,text):</span><br><span class="line">        self.text = text</span><br><span class="line">    def __enter__(self):</span><br><span class="line">        self.text = &quot;I say: &quot; + self.text</span><br><span class="line">        return self</span><br><span class="line">    def __exit__(self,exc_type,exc_value,traceback):</span><br><span class="line">        self.text = self.text + &quot;!&quot;</span><br><span class="line"></span><br><span class="line">with Vow(&quot;I am fine&quot;) as MyVow:</span><br><span class="line">    print(MyVow.text)</span><br><span class="line"></span><br><span class="line">print(MyVow.text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">我们能把文本存于文件,但python中最常见的是对象,当程序结束或计算机关机时,这些存在于内存的对象会消失.利用pickle可以将对象保存下来,再存储到磁盘里的文件</span><br><span class="line">对象存储步骤:</span><br><span class="line">第一步,我们将对象在内存中的数据直接抓取出来,转换成一个有序的文本,即序列化</span><br><span class="line">第二步,将文本存入文件</span><br><span class="line">等到需要时,我们从文件中读出文本,再放入内存,就可以获得原有对象</span><br><span class="line">例如:</span><br><span class="line">import pickle</span><br><span class="line">class Bird(object):</span><br><span class="line">    have_feather = True</span><br><span class="line">    reproduction = &apos;egg&apos;</span><br><span class="line"></span><br><span class="line">summer = Bird()  #创建对象</span><br><span class="line"></span><br><span class="line">方式一:</span><br><span class="line">pickle_str = pickle.dumps(summer)  #序列化对象,将对象转化为字符串形式</span><br><span class="line">with open(&apos;text.pkl&apos;,&apos;wb&apos;) as f:   #将内容写入到文件</span><br><span class="line">    f.write(pickle_str)</span><br><span class="line"></span><br><span class="line">方式二:</span><br><span class="line">with open(&apos;text.pkl&apos;,&apos;wb&apos;) as f:</span><br><span class="line">    pickle.dumps(summer,f)</span><br><span class="line"></span><br><span class="line">对象读取步骤:</span><br><span class="line">第一步,从文件中读取文本</span><br><span class="line">第二步,将字符串形式的文本转换为对象(注意:在读取对象时,程序中必须已经定义过类)</span><br><span class="line">例如:</span><br><span class="line">import pickle</span><br><span class="line">class Bird(object):</span><br><span class="line">    have_feather = True</span><br><span class="line">    reproduction = &apos;egg&apos;</span><br><span class="line">with open(&apos;text.pkl&apos;,&apos;r&apos;) as f:</span><br><span class="line">    summer = pickle.loads(f)</span><br><span class="line">print(summer.reproduction)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">python通过编程来管理时间和日期</span><br><span class="line"></span><br><span class="line">//time包</span><br><span class="line">例如:</span><br><span class="line">import time</span><br><span class="line">print(time.time())  #挂钟时间,单位是秒</span><br><span class="line"></span><br><span class="line">//测试程序运行时间</span><br><span class="line">import time</span><br><span class="line">start = time.clock()</span><br><span class="line">for i in range(1000):</span><br><span class="line">    print(i**2)</span><br><span class="line">end = time.clock()</span><br><span class="line">print(end - start)</span><br><span class="line">注意: clock()在不同计算机上返回值会有所不同,unix系统上,返回的是处理器时间,windows则是挂钟时间</span><br><span class="line"></span><br><span class="line">//sleep()让程序休眠</span><br><span class="line">import time</span><br><span class="line">print(&apos;start&apos;)</span><br><span class="line">sleep(10)</span><br><span class="line">print(&apos;end&apos;)</span><br><span class="line"></span><br><span class="line">//struct_time对象</span><br><span class="line">import time</span><br><span class="line">st = time.gmtime()  返回struct_time的UTC时间</span><br><span class="line">st = time.localtime() 返回struct_time的当地时间</span><br><span class="line">s  = time.mktime(st) 将struct_time转换为挂钟时间</span><br><span class="line"></span><br><span class="line">//datetime包</span><br><span class="line">datetime由data和time两部分组成:date是指年月日构成的日期,time是指时分秒毫秒构成的一天24小时具体时间</span><br><span class="line">datetime模块下面有两类: datetime.data和datetime.time类,你也可以调用datetime.datetime类</span><br><span class="line">例如:</span><br><span class="line">import datetime</span><br><span class="line">print(datetime.datetime(2017,6,2,10,5))</span><br><span class="line"></span><br><span class="line">a = datetime.datetime(2017,6,1,10,5)</span><br><span class="line">b = datetime.datetime(2017,7,10,10,5)</span><br><span class="line">c = datetime.timedelta(seconds = 600)</span><br><span class="line">d = datetime.timedelta(weeks = 3)</span><br><span class="line">print(a + c)</span><br><span class="line">print(b - d)</span><br><span class="line">print(a &gt; b)</span><br><span class="line"></span><br><span class="line">//日期格式</span><br><span class="line">对于包含时间信息的字符串来说,我们可以借助datetime包,把它转换成datetime类的对象</span><br><span class="line">例如:</span><br><span class="line">from datetime import datetime</span><br><span class="line">str = &apos;output-2017-06-02-101400.txt&apos;</span><br><span class="line">format = &quot;output-%Y-%m-%d-%H%M%S.txt&quot;</span><br><span class="line">t = datetime.strptime(str,format)</span><br><span class="line">print(t)</span><br><span class="line"></span><br><span class="line">将一个datetime对象转换为特定格式的字符串:</span><br><span class="line">from datetime import datetime</span><br><span class="line">format = &quot;%Y-%m-%d %H%M%S&quot;</span><br><span class="line">t = datetime(2017,6,2,10,15)</span><br><span class="line">print(t.strftime(format))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>正则</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">正则表达式的主要功能是从字符串中通过特定的模式,搜索希望找到的内容</span><br><span class="line">python中使用re来处理正则表达式</span><br><span class="line">例如:</span><br><span class="line">import re</span><br><span class="line">m = re.search(&quot;[0-9]&quot;,&quot;abcd4ef&quot;)</span><br><span class="line">print(m.group(0))</span><br><span class="line"></span><br><span class="line">正则搜索方法:</span><br><span class="line">m = re.search(pattern,string)  #搜索整个字符串,直到发现符合的字符串为止</span><br><span class="line">m = re.match(pattern,string)   #从头开始检查字符串是否符合正则表达式,字符串第一个字符必须符合正则</span><br><span class="line"></span><br><span class="line">正则搜索字符并替换:</span><br><span class="line">str = re.sub(pattern,replacement,string)</span><br><span class="line"></span><br><span class="line">常用正则:</span><br><span class="line">re.split()  #根据正则表达式分割字符串,并将所有字符串放在一个list表中返回</span><br><span class="line">re.findall() #根据正则搜索字符串,将所有符合条件的子字符串放在一个list表中返回</span><br><span class="line"></span><br><span class="line">正则表达式:</span><br><span class="line">* .      任意一个字符</span><br><span class="line">* a|b    字符a或b</span><br><span class="line">* [abc]  a或b或c一个字符</span><br><span class="line">* [0-4]  0-4范围内的一个字符</span><br><span class="line">* [a-f]  a-f范围内的一个字符</span><br><span class="line">* [^m]   非m的一个字符</span><br><span class="line">* \s     一个空格</span><br><span class="line">* \S     一个非空格</span><br><span class="line">* \d     一个数字,等价于[0-9]</span><br><span class="line">* \D     一个非数字,等价于[^0-9]</span><br><span class="line">* \w     数字或字母,等价于[0-9a-zA-Z]</span><br><span class="line">* \W     非数字或字母,等价于[^0-9a-zA-Z]</span><br><span class="line"></span><br><span class="line">正则表示重复符号:</span><br><span class="line">* *      重复超过0次或更多次</span><br><span class="line">* +      重复1次或超过1次</span><br><span class="line">* ?      重复0次或1次</span><br><span class="line">* &#123;m&#125;    重复m次</span><br><span class="line">* &#123;m,n&#125;  重复m到n次</span><br><span class="line"></span><br><span class="line">正则位置相关符号:</span><br><span class="line">* ^      字符串的起始位置</span><br><span class="line">* $      字符串的结尾位置</span><br><span class="line"></span><br><span class="line">正则进一步提取</span><br><span class="line">* ()     用括号()圈起来的正则是表达式的一部分,称为群.一个正则中可以有多个群</span><br><span class="line">例如:</span><br><span class="line">import re</span><br><span class="line">m = re.search(&quot;output_(\d&#123;4&#125;)&quot;,&quot;output_2017.txt&quot;)</span><br><span class="line">print(m.group(1))</span><br><span class="line"></span><br><span class="line">m = re.search(&quot;output_(?P&lt;year&gt;\d&#123;4&#125;)&quot;,&quot;output_2017.txt&quot;)</span><br><span class="line">print(m.group(&quot;year&quot;))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python http通信</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">python标准库中的http.client包可用于发出HTTP请求</span><br><span class="line">例如:</span><br><span class="line">import http.client</span><br><span class="line">conn = http.client.HTTPConnection(&apos;www.baidu.com&apos;)</span><br><span class="line">conn.request(&quot;GET&quot;,&quot;/&quot;)</span><br><span class="line">respone = conn.getresponse()</span><br><span class="line">print(response.status,response.reason)</span><br><span class="line">content = response.read()</span><br><span class="line">print(content)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/06/02/python-对象使用/" data-id="cjavy9k4l008r0coqo8tmx6g4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-TCP-状态" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/31/TCP-状态/" class="article-date">
+  <time datetime="2017-05-31T09:34:23.000Z" itemprop="datePublished">2017-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TCP-IP/">TCP.IP</a>►<a class="article-category-link" href="/categories/TCP-IP/TCP-状态/">TCP 状态</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/31/TCP-状态/">TCP 状态</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="TCP状态"><a href="#TCP状态" class="headerlink" title="TCP状态"></a>TCP状态</h3><ul>
+<li><p><strong>TCP三次握手的过程如下:</strong></p>
+<ol>
+<li>主动连接端发送一个SYN包给被动连接端</li>
+<li>被动连接端收到SYN包后,发送一个带ACK和SYN标志的包给主动连接端</li>
+<li>主动连接端发送一个带ACK标志的包给被动连接端,握手动作完成</li>
+</ol>
+</li>
+<li><p><strong>TCP四次挥手的过程如下:</strong></p>
+<ol>
+<li>主动关闭端发送一个FIN包给被动关闭端</li>
+<li>被动关闭端收到FIN包后,发送一个ACK包给主动关闭端</li>
+<li>被动关闭端发送了ACK包后,再发送一个FIN包给主动关闭端</li>
+<li>主动关闭端收到FIN包后,发送一个ACK包,当被动关闭端收到ACK包后,四次挥手动作完成,连接断开</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="netstat或ss中的TCP状态"><a href="#netstat或ss中的TCP状态" class="headerlink" title="netstat或ss中的TCP状态"></a>netstat或ss中的TCP状态</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//获取TCP状态命令</span><br><span class="line">netstat -ant | awk <span class="string">'/^tcp/ &#123;++S[$NF]&#125; END &#123;for(a in S) print a, S[a]&#125;'</span></span><br><span class="line">ss -ant|awk <span class="string">'&#123;print $1&#125;'</span>|sort|uniq -c</span><br><span class="line"></span><br><span class="line">//各个状态说明</span><br><span class="line">* CLOSED  初始（无连接）状态。</span><br><span class="line">* LISTEN  侦听状态,等待远程机器的连接请求</span><br><span class="line">* SYN_SEND  在TCP三次握手期间,主动连接端发送了SYN包后,进入SYN_SEND状态,等待对方的ACK包</span><br><span class="line">* SYN_RECV  在TCP三次握手期间,主动连接端收到SYN包后,进入SYN_RECV状态</span><br><span class="line">* ESTABLISHED  完成TCP三次握手后,主动连接端进入ESTABLISHED状态.此时,TCP连接已经建立,可以进行通信</span><br><span class="line">* FIN_WAIT_1  在TCP四次挥手时,主动关闭端发送FIN包后,进入FIN_WAIT_1状态</span><br><span class="line">* FIN_WAIT_2  在TCP四次挥手时,主动关闭端收到ACK包后,进入FIN_WAIT_2状态</span><br><span class="line">* TIME_WAIT  在TCP四次挥手时,主动关闭端发送了ACK包之后,进入TIME_WAIT状态,等待最多MSL时间,让被动关闭端收到ACK包</span><br><span class="line">* CLOSING  在TCP四次挥手期间,主动关闭端发送了FIN包后,没有收到对应的ACK包,却收到对方的FIN包.此时,进入CLOSING状态</span><br><span class="line">* CLOSE_WAIT  在TCP四次挥手期间,被动关闭端收到FIN包后,进入CLOSE_WAIT状态</span><br><span class="line">* LAST_ACK  在TCP四次挥手时,被动关闭端发送FIN包后,进入LAST_ACK状态,等待对方的ACK包</span><br><span class="line"></span><br><span class="line">//主动和被动可能出现的状态</span><br><span class="line">* 主动连接端可能的状态有:  CLOSED,SYN_SEND,ESTABLISHED。</span><br><span class="line">* 主动关闭端可能的状态有:  FIN_WAIT_1,FIN_WAIT_2,TIME_WAIT</span><br><span class="line">* 被动连接端可能的状态有:  LISTEN,SYN_RECV,ESTABLISHED</span><br><span class="line">* 被动关闭端可能的状态有:  CLOSE_WAIT,LAST_ACK,CLOSED</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.smallasa.com/2017/05/31/TCP-状态/" data-id="cjavy9ju2000y0coqqtij7tjx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/10/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/12/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AliCloud/">AliCloud</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AliCloud/SDK/">SDK</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AliCloud/SDK/Python-SDK/">Python SDK</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Android-install/">Android install</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/Android-install/Android-studio-install/">Android studio install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/">Development</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/">Doc</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/HTTP-严格传输安全HSTS/">HTTP 严格传输安全HSTS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/HTTP协议/">HTTP协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/TCP-协议详解/">TCP 协议详解</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/TCP与socket区别/">TCP与socket区别</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/linux-文件描述符与打开文件之间的关系/">linux 文件描述符与打开文件之间的关系</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/linux-文件系统inode/">linux 文件系统inode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Development/Doc/一次完整的HTTP请求/">一次完整的HTTP请求</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Disk/">Disk</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Disk/disk-io-performance/">disk io performance</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Disk/disk-iostat/">disk iostat</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/">Distributed storage</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/">GlusterFS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/GlusterFS-architecture/">GlusterFS architecture</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/GlusterFS-info/">GlusterFS info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/GlusterFS-install/">GlusterFS install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Distributed-storage/GlusterFS/GlusterFS-workflow/">GlusterFS workflow</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HA/">HA</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HA/DRBD/">DRBD</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HA/DRBD/DRBD-install/">DRBD install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/HA/keepalived/">keepalived</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/HA/keepalived/keepalived-install/">keepalived install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/">IDE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/Intellij/">Intellij</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/Intellij/Intellij-setting/">Intellij setting</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/vim/">vim</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/vim/vim-shortcut-key/">vim shortcut key</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/IDE/vim/vim-vimrc/">vim vimrc</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Kernel/">Kernel</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Kernel/kernel-memory/">kernel memory</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Kernel/kernel-memory/kernel-共享内存/">kernel 共享内存</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/">Monitor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/ganglia/">ganglia</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/ganglia/ganglia-install/">ganglia install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/hmonitor/">hmonitor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/hmonitor/hmonitor-install/">hmonitor install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/htmonitor/">htmonitor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/htmonitor/htmonitor-install/">htmonitor install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/smokeping/">smokeping</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/smokeping/smokeping-install/">smokeping install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/">zabbix</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/monitor/">monitor</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/monitor/zabbix-monitor-cpu/">zabbix monitor cpu</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/monitor/zabbix-monitor-mem/">zabbix monitor mem</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-auto-discover/">zabbix auto discover</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-grafana-install/">zabbix grafana install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-install/">zabbix install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-install-distributed/">zabbix install distributed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-item-and-tigger/">zabbix item and tigger</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-java-gateway/">zabbix java gateway</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-modify-login-user-passwd/">zabbix modify login user passwd</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-optimization/">zabbix optimization</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-proxy-install/">zabbix proxy install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-server-support-chinese/">zabbix server support chinese</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/zabbix/zabbix-windows-agent/">zabbix windows agent</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/树莓派/">树莓派</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/树莓派/树莓派-GSM-语音短信报警/">树莓派 GSM 语音短信报警</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/监控/">监控</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Monitor/监控/监控知识体系/">监控知识体系</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Framework/">Python Framework</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Framework/Python-Django/">Python Django</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Framework/Python-Django-setting/">Python Django setting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Framework/Python-tornado-install/">Python tornado install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/">Python Learn</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-上下文管理器/">python 上下文管理器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-内存管理/">python 内存管理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-函数编程/">python 函数编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-变量/">python 变量</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-对象使用/">python 对象使用</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-对象的属性/">python 对象的属性</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-对象编程/">python 对象编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-数据类型/">python 数据类型</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-流程控制/">python 流程控制</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-爬虫/">python 爬虫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-特殊方法/">python 特殊方法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-特殊说明/">python 特殊说明</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-装饰器/">python 装饰器</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-过程编程/">python 过程编程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-进阶/">python 进阶</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-Learn/python-闭包/">python 闭包</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/">Python install</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-error-info/">python error info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-pip-source-image/">python pip source image</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-pip-use/">python pip use</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-pyenv-install/">python pyenv install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-setup-py/">python setup.py</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-source-install/">python source install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-install/python-virtualenv/">python virtualenv</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-library/">Python library</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-library/MySQLdb/">MySQLdb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-library/memory-profiler/">memory_profiler</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-library/time-datetime-calendar/">time datetime calendar</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-modules/">Python modules</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-modules/python-modules-path/">python modules path</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-modules/python-modules-pylint-and-ipython/">python modules pylint and ipython</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-other/">Python other</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/Python-other/python-import-and-reload/">python import and reload</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/">Ruby</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Ruby-install/">Ruby install</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ruby/Ruby-install/Ruby-install/">Ruby install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/">TCP.IP</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/TCP-状态/">TCP 状态</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/TCP-IP模型/">TCP/IP模型</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/Wireshark-use/">Wireshark use</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/WeChat/">WeChat</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WeChat/WeChat-enterprise/">WeChat enterprise</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/WeChat/WeChat-enterprise/WeChat-enterprise-API/">WeChat enterprise API</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/">automation</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/">git</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-command/">git command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-error/">git error</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-gitlab/">git gitlab</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-gitolite/">git gitolite</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-gogs/">git gogs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-gogs-source-install/">git gogs source install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-init/">git init</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/git/git-workflow/">git workflow</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/jenkins/">jenkins</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/jenkins/jenkins-info/">jenkins info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/jenkins/jenkins-install/">jenkins install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/kvm/">kvm</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/kvm/kvm-install/">kvm install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/maven/">maven</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/maven/maven-install/">maven install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/nexus/">nexus</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/nexus/nexus-install/">nexus install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/nexus/nexus-proxy-maven/">nexus proxy maven</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/rpm/">rpm</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/rpm/rpm-package-build/">rpm package build</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/rpm/rpmbuild-spec/">rpmbuild spec</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/">salt</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-advanced-topic/">salt advanced topic</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-highstate/">salt highstate</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-info/">salt info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-install/">salt install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-install-HA/">salt install HA</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-install-distributed/">salt install distributed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-install-standard/">salt install standard</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-jinja2-grain-pillar-module/">salt jinja2 grain pillar module</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-event-reactor/">salt manage event reactor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-grains/">salt manage grains</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-job/">salt manage job</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-module/">salt manage module</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-pillar/">salt manage pillar</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-return/">salt manage return</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-states/">salt manage states</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-manage-target/">salt manage target</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-master-syndic-install/">salt master syndic install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-master-conf/">salt master.conf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-minion-conf/">salt minion.conf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-raet/">salt raet</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-state-module/">salt state module</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-syndic-conf/">salt syndic.conf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/salt/salt-write-module-code/">salt write module code</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/svn/">svn</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/svn/svn-auto-update/">svn auto update</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/automation/yum/">yum</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/automation/yum/yum-server-install/">yum server install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/">Mongo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-auth/">mongo auth</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-error/">mongo error</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-replication-auth-install/">mongo replication auth install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-replication-standard-install/">mongo replication standard install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mongo/mongo-standard-install/">mongo standard install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/">Mysql</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-command/">mysql command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-error-info/">mysql error info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-explain/">mysql explain</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-grant/">mysql grant</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-index-options/">mysql index options</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-innodb-buffer-pool-flush/">mysql innodb buffer pool flush</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-master-slave/">mysql master slave</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-master-slave-switch/">mysql master slave switch</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-partition/">mysql partition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-select-join/">mysql select join</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-slow-log/">mysql slow log</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-standard/">mysql standard</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-table-size/">mysql table size</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Mysql/mysql-use-memory-as-disk/">mysql use memory as disk</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/">Postgresql</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-book-use/">postgresql book use</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-master-slave-info/">postgresql master slave info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-master-slave/">postgresql master/slave</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-plugin-install/">postgresql plugin install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-standard/">postgresql standard</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-tablespace-database-schema-table-user-role-relation/">postgresql tablespace database schema table user role relation</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-yum-install/">postgresql yum install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-常用命令/">postgresql 常用命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-数据库对象/">postgresql 数据库对象</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Postgresql/postgresql-数据库管理/">postgresql 数据库管理</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/">Redis</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-error/">redis error</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-install/">redis install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-redis-trib-rb/">redis redis-trib.rb</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-status/">redis status</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/Redis/redis-use/">redis use</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/influxDB/">influxDB</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/database/influxDB/influxDB-install/">influxDB install</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/golang/">golang</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/golang/go-env/">go env</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/">hadoop</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/">RabbitMQ</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-cluster/">RabbitMQ cluster</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-high-availability/">RabbitMQ high availability</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-info/">RabbitMQ info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-install/">RabbitMQ install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-python-pika/">RabbitMQ python pika</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-user-and-grant/">RabbitMQ user and grant</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/RabbitMQ/RabbitMQ-working-principle/">RabbitMQ working principle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/beats/">beats</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/beats/beats-install/">beats install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/datax/">datax</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/datax/datax-info/">datax info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/datax/datax-install/">datax install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/datax/datax-job/">datax job</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/">elasticsearch</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-backup-and-restore/">elasticsearch backup and restore</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-command/">elasticsearch command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-core-component/">elasticsearch core component</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-exploring-your-cluster/">elasticsearch exploring your cluster</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-exploring-your-data/">elasticsearch exploring your data</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-four-search-type/">elasticsearch four search type</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-full-cluster-restart-upgrade/">elasticsearch full cluster restart upgrade</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-install/">elasticsearch install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-modifying-your-data/">elasticsearch modifying your data</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-rolling-upgrades/">elasticsearch rolling upgrades</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-safe-restart/">elasticsearch safe restart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/elasticsearch-shard/">elasticsearch shard</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/how-to-tune-for-indexing-speed/">how to tune for indexing speed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/elasticsearch/how-to-tune-for-search-speed/">how to tune for search speed</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/flume/">flume</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/flume/flume-info/">flume info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/flume/flume-install/">flume install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/grafana/">grafana</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/grafana/grafana-install/">grafana install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/hadoop/">hadoop</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/hadoop/hadoop-简介/">hadoop 简介</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/">kafka</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-add-topic-partition/">kafka add topic partition</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-add-topic-replicats/">kafka add topic replicats</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-broker-config/">kafka broker config</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-high-throughput/">kafka high throughput</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-info/">kafka info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-install/">kafka install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-manage-web/">kafka manage web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-migrate-and-scale/">kafka migrate and scale</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-offset-monitor/">kafka offset monitor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-optimize/">kafka optimize</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-use/">kafka use</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-web-console/">kafka web console</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kafka/kafka-with-zookeeper/">kafka with zookeeper</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kibana/">kibana</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/kibana/kibana-install/">kibana install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/">logstash</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/logstash-config-file/">logstash config file</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/logstash-filter-grok/">logstash filter grok</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/logstash-info/">logstash info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/logstash/logstash-install/">logstash install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/mycat/">mycat</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/mycat/mycat-jvm-optimize/">mycat jvm optimize</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/mycat/mycat-web-install/">mycat web install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/nsq/">nsq</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/nsq/nsq-command/">nsq command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/nsq/nsq-info/">nsq info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/nsq/nsq-install/">nsq install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/">zookeeper</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-install/">zookeeper install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-monitor/">zookeeper monitor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-optimize/">zookeeper optimize</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-use/">zookeeper use</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hadoop/zookeeper/zookeeper-zab-protocol/">zookeeper zab protocol</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-env/">java env</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-jvm-optimize/">java jvm optimize</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-jvm-opts/">java jvm opts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-jvm-原理/">java jvm 原理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-learn/">java learn</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-learn/java-学习笔记/">java 学习笔记</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-log4j/">java log4j</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-performance-analysis/">java performance analysis</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/java-performance-analysis/jps/">jps</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/k8s/">k8s</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/k8s/k8s-dashboard-install/">k8s dashboard install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/k8s/k8s-install/">k8s install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/k8s/k8s-registry-install/">k8s registry install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/node/">node</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/node/node-install/">node install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/other/ACID/">ACID</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/分布式二阶段和三阶段提交协议/">分布式二阶段和三阶段提交协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/开源许可协议/">开源许可协议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/网络带宽/">网络带宽</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/">system service</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/">Atlassian</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/confluence-https/">confluence https</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/confluence-install/">confluence install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/confluence-reset-passwd/">confluence reset passwd</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/confluence-update/">confluence update</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/jira-https/">jira https</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/jira-install/">jira install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/jira-update/">jira update</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Atlassian/mariadb-install/">mariadb install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/">CentOS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/Base-env/">Base env</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-common-use-scripts/">linux common use scripts</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-history-info-setting/">linux history info setting</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-login-info/">linux login info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-nginx-install/">linux nginx install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-skill/">linux skill</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-system-init/">linux system init</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-内存插槽-内存信息/">linux 内存插槽 内存信息</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-扩容swap分区/">linux 扩容swap分区</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-物理CPU-CPU核数-逻辑CPU/">linux 物理CPU CPU核数 逻辑CPU</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-磁盘系统block区别/">linux 磁盘系统block区别</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/linux-设置-包含头文件路径-和-动态库链接路径/">linux 设置 包含头文件路径 和 动态库链接路径</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/CentOS/make提高源码编译速度/">make提高源码编译速度</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/NFS/">NFS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/NFS/nfs-exports-command/">nfs exports command</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/NFS/nfs-install/">nfs install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Samba/">Samba</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Samba/samba-conf/">samba conf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/Samba/samba-install/">samba install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/">command</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/grep/">grep</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/pigz/">pigz</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/sed/">sed</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/split/">split</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/command/tr/">tr</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/haproxy/">haproxy</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/haproxy/haproxy-install/">haproxy install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/">nginx</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/nginx-install/">nginx install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/nginx-location/">nginx location</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/nginx-rewrite/">nginx rewrite</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/nginx/nginx-status/">nginx status</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/ntpd/">ntpd</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/ntpd/ntpd-install/">ntpd install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/openssl/">openssl</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/openssl/openssl-certificate/">openssl certificate</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/openvpn/">openvpn</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/openvpn/openvpn-install/">openvpn install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/rsync/">rsync</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/rsync/rsync-install/">rsync install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/supersord/">supersord</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/supersord/supersord-install/">supersord install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/">vsftpd</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/ftp-proxy/">ftp proxy</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/vsftpd-error/">vsftpd error</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/vsftpd-info/">vsftpd info</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/vsftpd/vsftpd-install/">vsftpd install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/windows/">windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/windows/cygwin-install/">cygwin install</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/windows/ipsec-set/">ipsec set</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/system-service/windows/windows-modify-hosts/">windows modify hosts</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/SSL/">SSL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/SSL/SSL-certificate/">SSL certificate</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/angular/">angular</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/angular/angular-install/">angular install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/hexo/">hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/hexo/hexo-install/">hexo install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/sass/">sass</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/sass/sass-install/">sass install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/xml/">xml</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/web/xml/xml-format/">xml format</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/01/hello-everyone/">Hello Everyone</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/28/kafka-web-console/">kafka web console</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/27/svn-auto-update/">svn auto update</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/15/salt-manage-event-reactor/">salt manage event reactor</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/15/salt-manage-job/">salt manage job</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 penn<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
